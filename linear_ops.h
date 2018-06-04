@@ -89,7 +89,7 @@ float VDot(fVector vector1, fVector vector2){
 
 // Cross Product
 
-fVector VCross(fVector v1, fVector v2){
+fVector VCross(fVector vec1, fVector vec2){
 	fVector cross_prod;
 
 	cross_prod.x = vec1.y * vec2.z - vec1.z * vec2.y;

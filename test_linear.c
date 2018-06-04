@@ -31,9 +31,9 @@ int main(){
     vector2=float32_to_fvector(neon_vector1);
 
     float* v2fl = (float*)(&vector2);
-
+    int i = 0;
 	//Test if conversion worked by printing entries 
-    for (i=0; i<=3; i++){
+    for (i = 0; i <= 3; i++){
 		printf("The %d entry is: %f\n", i, neon_vector1[i]);
 	}
 return 0;
