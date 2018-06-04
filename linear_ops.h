@@ -77,7 +77,7 @@ fVector CMult(fVector v, float c){
 
 // Dot Product
 
-float VDot(fVector vector1, fvector vector2){
+float VDot(fVector vector1, fVector vector2){
 	float dot_product;
 
 	dot_product = vector1.x * vector2.x +
@@ -89,7 +89,7 @@ float VDot(fVector vector1, fvector vector2){
 
 // Cross Product
 
-fVector VCross(fVector v1, fvector v2){
+fVector VCross(fVector v1, fVector v2){
 	fVector cross_prod;
 
 	cross_prod.x = vec1.y * vec2.z - vec1.z * vec2.y;
@@ -101,7 +101,7 @@ fVector VCross(fVector v1, fvector v2){
 
 // Apply a transformation defined by a matrix (left mult.)
 
-fVector transform(fvector v, Matrix m){
+fVector transform(fVector v, Matrix m){
 	fVector transformed;
 	transformed.x = m.a.x*v.x + m.a.y*v.y + m.a.z*v.z;
 	transformed.y = m.b.x*v.x + m.b.y*v.y + m.b.z*v.z;
