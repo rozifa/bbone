@@ -126,7 +126,7 @@ Matrix transpose(Matrix m){
 
 Matrix mat_mult(Matrix m1, Matrix m2){
 	Matrix result;
-	Matrix m1 = transpose(m1) // use a pointer instead?
+	m1 = transpose(m1); // use a pointer instead?
 	result.a.x = VDot(m1.a, m2.a); result.a.y = VDot(m1.a, m2.b); result.a.z = VDot(m1.a, m2.c);
 	result.b.x = VDot(m1.b, m2.a); result.b.y = VDot(m1.b, m2.b); result.b.z = VDot(m1.b, m2.c);
 	result.c.x = VDot(m1.c, m2.a); result.c.y = VDot(m1.c, m2.b); result.c.z = VDot(m1.c, m2.c);
@@ -156,16 +156,12 @@ typedef struct _Cofactor{
 } Cofactor;
 
 Cofactor cofactor(Matrix m){
-	Cofactor result;
-
-	result.one = {.a.x = m.b.y, .a.y = m.b.z, 
-				  .b.x = m.c.y, .b.y = m.c.z}; 
-
-	result.two = {.a.x = m.a.y, .a.y = m.a.z ,
-				  .b.x = m.c.y, .b.y = m.c.z};
-
-	result.three = {.a.x = m.a.y, .a.y = m.y.z ,
-					.b.x = m.b.y, .b.y = m.b.z};
+	Cofactor result = {.one   = {.a.x = m.b.y, .a.y = m.b.z, 
+								 .b.x = m.c.y, .b.y = m.c.z},
+					   .two   = {.a.x = m.a.y, .a.y = m.a.z,
+					   			 .b.x = m.c.y, .b.y = m.c.z},
+					   .three = {.a.x = m.a.y, .a.y = m.y.z, 
+					   			 .b.x = m.b.y, .b.y = m.b.z}};
 
 	return result;
 }
