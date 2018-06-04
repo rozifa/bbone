@@ -126,7 +126,7 @@ Matrix transpose(Matrix m){
 
 Matrix mat_mult(Matrix m1, Matrix m2){
 	Matrix result;
-	Matrix m1 = transpose(m1) // use a pointer instead?
+	m1 = transpose(m1); // use a pointer instead?
 	result.a.x = VDot(m1.a, m2.a); result.a.y = VDot(m1.a, m2.b); result.a.z = VDot(m1.a, m2.c);
 	result.b.x = VDot(m1.b, m2.a); result.b.y = VDot(m1.b, m2.b); result.b.z = VDot(m1.b, m2.c);
 	result.c.x = VDot(m1.c, m2.a); result.c.y = VDot(m1.c, m2.b); result.c.z = VDot(m1.c, m2.c);
