@@ -1,10 +1,6 @@
-// Float Vector
-// Put these in a .h file
-// Maybe Make this a .h file
+//Various custom data types and linear algebra operations that can be done with them.
 
-//Drew's Data Types:
-// I guess these are faster than the Neon for small operations on short vectors etc. 
-// However, the neon wrappers may be faster (especially for more operations)?
+//Data types
 typedef struct _fVector{
 	float x; 
 	float y; 
@@ -134,7 +130,7 @@ Matrix mat_mult(Matrix m1, Matrix m2){
 
 	return result;
 }
-
+// The following lines improve code in the original Snic code. 
 // Replace lines 171-188 in rotary.c
 Matrix MatrixByMatrixTranspose(Matrix m1, Matrix m2){
 	Matrix m2_tranp = transpose(m2);
@@ -150,12 +146,14 @@ Matrix MatrixTransposeByMatrix(Matrix m1, Matrix m2){
 	return result;
 }
 
+//Cofactor type, contains 3 2x2 matrices
 typedef struct _Cofactor{
 	sMatrix one; // cofactor matrices are 2 x 2 for a 3 x 3 matrix. 
 	sMatrix two;
 	sMatrix three;
 } Cofactor;
 
+//Returns the cofactor matrices of a 3x3 matrix
 Cofactor cofactor(Matrix m){
 	Cofactor result = {.one   = {.a.x = m.b.y, .a.y = m.b.z, 
 								 .b.x = m.c.y, .b.y = m.c.z},
@@ -167,6 +165,7 @@ Cofactor cofactor(Matrix m){
 	return result;
 }
 
+//Compute the determinent of a 3x3 matrix via use of the cofactors
 Matrix determinant(Matrix m){
 	float result;
 
@@ -184,6 +183,7 @@ Matrix determinant(Matrix m){
 	return result;
 }
 
+//Array wrapper
 float fVecTOarray(fVector vector){
 
 	float converted[3];
@@ -194,8 +194,12 @@ float fVecTOarray(fVector vector){
 
 	return converted;
 }
+
+
+
 /*
 // This is all wrong...
+//Maybe come back to this..was tired
 float MatrixTOarray(Matrix matrix){
 	float converted[3][3];
 	float cols[3];

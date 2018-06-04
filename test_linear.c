@@ -1,8 +1,7 @@
 #include <stdio.h>
-// #include "linear_ops.h"
 #include <arm_neon.h>
 #include "linear_ops.h"
-#include "neon_wrappers.h" // have to include the .c as a .h 
+#include "neon_wrappers.h" 
 
 //Initalize test vectors
 fVector v1 = {.x = 3.5, .y = 3.14, .z = 69.420}; //arbitrary 
@@ -26,6 +25,10 @@ float32x4_t neon_vector4 = fVector_wrapper(v4);
 float32x4_t neon_vector5 = fVector_wrapper(v5);
 float32x4_t neon_vector6 = fVector_wrapper(v6);
 
+
+//test function
+// Here we want to call our various data structures 
+// and associated operations to test their speed.
 int main(){
     fVector vector2 = {};
     vector2=float32_to_fvector(neon_vector1);

@@ -20,11 +20,14 @@ typedef struct _Matrix{
 	fVector c;
 } Matrix;
 */
+
+//Wrapper function: fVector --> NEON Vector
 float32x4_t fVector_wrapper(fVector vector){
 	float32x4_t neon_vec = vld1q_f32((float*)(&vector)); // ARM Neon Intrinsic to load a vect.
 	return neon_vec;
 }
 
+//Inverse wrapper: NEON --> fVector
 fVector float32_to_fvector(float32x4_t f32){
     fVector result = {};
     float* retfl = (float*)(&result);
@@ -34,6 +37,8 @@ fVector float32_to_fvector(float32x4_t f32){
     retfl[3] = vgetq_lane_f32(f32, 3);
     return result;
 }
+
+//Matrix wrapper - fix later
 /*
 float Matrix_wrapper(Matrix matrix){ //im falling asleep 
 	// Code goes here.
@@ -52,6 +57,8 @@ float Matrix_wrapper(Matrix matrix){ //im falling asleep
 */
 
 /*
+
+
 //testing 
 int main(){
 	//Test Wrapped Vect
