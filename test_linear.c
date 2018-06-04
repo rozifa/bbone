@@ -1,7 +1,7 @@
 #include <stdio.h>
 // #include "linear_ops.h"
 #include <arm_neon.h>
-#include <neon_wrappers.h> // have to include the .c as a .h 
+#include "neon_wrappers.h" // have to include the .c as a .h 
 
 //Initalize test vectors
 fVector v1 = {.x = 3.5, y = 3.14, z = 69.420}; //arbitrary 
