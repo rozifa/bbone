@@ -3,12 +3,20 @@
 //#include "vector.h" only if we change the definition 
 // I don't even know if this is at all useful...
 
+//Vector
 typedef struct _fVector {
 		float x;
 		float y;
 		float z; 
 		float w;
 	} fVector;
+
+//Matrix
+typedef struct _Matrix{
+	fVector a;
+	fVector b;
+	fVector c;
+} Matrix;
 
 float32x4_t fVector_wrapper(fVector vector){
 	float32x4_t neon_vec = vld1q_f32((float*)(&vector)); // ARM Neon Intrinsic to load a vect.
