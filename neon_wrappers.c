@@ -30,8 +30,6 @@ float Matrix_wrapper(Matrix matrix){ //im falling asleep
 	return neon_mat;
 }
 
-int i;
-
 fVector float32_to_fvector(float32x4_t f32){
     fVector result = {};
     float* retfl = (float*)(&result);
@@ -58,10 +56,10 @@ int main(){
 	fVector v6 = {.x = 224, y = 5.234, z = 12.25};
 
     Matrix matrix1 = {.a = v4, .b = v5, .c = v6};
-    float32x4_t neon_matrix = Matrix_wrapper(matrix1)
+    float32x4_t neon_matrix = Matrix_wrapper(matrix1);
 
     float* v2fl = (float*)(&vector2);
-
+    int i;
 	//Test if conversion worked by printing entries 
     for (i=0; i<=3; i++){
 		printf("The %d entry is: %f\n", i, neon_vector[i]);
@@ -72,5 +70,3 @@ int main(){
 	}
 return 0;
 }
-
-#defin
