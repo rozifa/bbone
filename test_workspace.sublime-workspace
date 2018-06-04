@@ -1,0 +1,1233 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"univers",
+				"universe_of_defects"
+			],
+			[
+				"ex",
+				"expected_bugs"
+			],
+			[
+				"unvers",
+				"universe_of_defects"
+			],
+			[
+				"first",
+				"first_name"
+			],
+			[
+				"fVec",
+				"fVecTOarray"
+			],
+			[
+				"te",
+				"term_3"
+			],
+			[
+				"term",
+				"term_2"
+			],
+			[
+				"fVect",
+				"fVector_wrapper"
+			],
+			[
+				"neon_vec",
+				"neon_vector"
+			],
+			[
+				"std",
+				"stdio.h\tstandard header"
+			],
+			[
+				"neon",
+				"neon_vec"
+			],
+			[
+				"float",
+				"float32x4_t"
+			],
+			[
+				"vec",
+				"vector"
+			],
+			[
+				"c",
+				"c"
+			],
+			[
+				"b",
+				"b"
+			],
+			[
+				"re",
+				"return"
+			],
+			[
+				"v2",
+				"v2"
+			],
+			[
+				"vector",
+				"vector1"
+			],
+			[
+				"Book",
+				"BookA"
+			],
+			[
+				"num",
+				"number1"
+			],
+			[
+				"sens",
+				"sensor2"
+			],
+			[
+				"senso",
+				"sensor1"
+			],
+			[
+				"dyn",
+				"dynamic"
+			],
+			[
+				"sen",
+				"sen2"
+			],
+			[
+				"concat",
+				"concatenate"
+			],
+			[
+				"conc",
+				"concatenate"
+			],
+			[
+				"x",
+				"x"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/C/Users/Din/Desktop/QVI/simstage/simulate.py",
+			"settings":
+			{
+				"buffer_size": 18281,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/Din/Desktop/QVI/simstage/calsuites.py",
+			"settings":
+			{
+				"buffer_size": 10051,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/Din/Desktop/QVI/simstage/stages.py",
+			"settings":
+			{
+				"buffer_size": 1800,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/Din/Desktop/QVI/simstage/mathhelper.py",
+			"settings":
+			{
+				"buffer_size": 8849,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/Din/Desktop/QVI/sonic/sp25mode.c",
+			"settings":
+			{
+				"buffer_size": 32063,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/Din/Desktop/QVI/code/err_diff_sim.py",
+			"settings":
+			{
+				"buffer_size": 969,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Din/Desktop/QVI/simstage/calibrate.py",
+			"settings":
+			{
+				"buffer_size": 16017,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/Din/Desktop/QVI/simstage/interface.py",
+			"settings":
+			{
+				"buffer_size": 6649,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Din/Desktop/QVI/sonic/advmotion.c",
+			"settings":
+			{
+				"buffer_size": 15587,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/Din/Desktop/QVI/sonic/vector.h",
+			"settings":
+			{
+				"buffer_size": 1465,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "spaker_btfo.c",
+			"settings":
+			{
+				"buffer_size": 134,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Din/Desktop/QVI/sonic/vecmath.c",
+			"settings":
+			{
+				"buffer_size": 4326,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/Din/Desktop/QVI/sonic/rotary.c",
+			"settings":
+			{
+				"buffer_size": 13783,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "c_practice.c",
+			"settings":
+			{
+				"buffer_size": 2239,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "linear_ops.c",
+			"settings":
+			{
+				"buffer_size": 5075,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "neon_wrappers.c",
+			"settings":
+			{
+				"buffer_size": 1773,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "neon_tests.c",
+			"settings":
+			{
+				"buffer_size": 173,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Din/Desktop/QVI/sonic/arm.mak",
+			"settings":
+			{
+				"buffer_size": 3359,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "makefile",
+			"settings":
+			{
+				"buffer_size": 90,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "neon_matrix_mult.c",
+			"settings":
+			{
+				"buffer_size": 365,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "test_linear.c",
+			"settings":
+			{
+				"buffer_size": 1154,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Din/Desktop/jeff.c",
+			"settings":
+			{
+				"buffer_size": 156,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Din/Desktop/grypnpyget - Boba Beach.txt",
+			"settings":
+			{
+				"buffer_size": 24,
+				"encoding": "UTF-8",
+				"line_ending": "Windows",
+				"name": "grypnpyget - Boba Beach"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"vme",
+				"View: Toggle Menu"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 206.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/Din/Desktop/QVI/code/ex9.c",
+		"/E/home/debian/din-c/test_transfer.c",
+		"/C/Users/Din/Desktop/QVI/code/ex8.c",
+		"/C/Users/Din/Desktop/QVI/code/ex7.c",
+		"/C/Users/Din/Desktop/QVI/code/ex6.c",
+		"/C/Users/Din/Desktop/QVI/code/ex5.c",
+		"/C/Users/Din/Desktop/QVI/code/ex4.c",
+		"/C/Users/Din/Desktop/QVI/code/ex3.c",
+		"/C/Users/Din/Desktop/QVI/code/ex2.c",
+		"/C/Users/Din/Desktop/QVI/code/zed_1.c",
+		"/C/Users/Din/Desktop/QVI/C Practice Code/neon_tests.c",
+		"/D/readme.html",
+		"/C/Users/Din/Desktop/QVI/C Practice Code/test_linear.c",
+		"/C/Users/Din/Desktop/QVI/sonic/240x_vector.h",
+		"/C/Users/Din/Desktop/QVI/code/error_code.py",
+		"/C/Users/Din/Desktop/QVI/sonic/embedpy.c",
+		"/C/Users/Din/Desktop/QVI/sonic/D_servos.h",
+		"/C/Users/Din/Desktop/QVI/sonic/armface.h",
+		"/C/Users/Din/Desktop/QVI/sonic/Dspface.h",
+		"/C/Users/Din/Desktop/QVI/sonic/spline.py",
+		"/C/Users/Din/Desktop/QVI/sonic/Tables_d.c",
+		"/C/Users/Din/Desktop/QVI/sonic/cal_storage.py",
+		"/C/Users/Din/Desktop/QVI/sonic/advmotion.c",
+		"/C/Users/Din/Desktop/fredo.pgm",
+		"/C/Users/Din/Desktop/QVI/simstage/webviewer/interface.html",
+		"/C/Users/Din/Desktop/QVI/simstage/webviewer/vector.html",
+		"/C/Users/Din/Downloads/Volumetric Error Research Notebook (1).html",
+		"/C/Users/Din/Desktop/QVI/simstage/artifacts.py",
+		"/C/Users/Din/Desktop/QVI/simstage/simulate.py",
+		"/C/Users/Din/Desktop/QVI/sonic/htmodel.py"
+	],
+	"find":
+	{
+		"height": 32.0
+	},
+	"find_in_files":
+	{
+		"height": 122.0,
+		"where_history":
+		[
+			"."
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"native",
+			"ret",
+			"float32x4_t",
+			");\n",
+			"machineToRaw",
+			"rawToMachine",
+			"rawtomachine",
+			"retur",
+			"numpy"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 6,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/C/Users/Din/Desktop/QVI/simstage/simulate.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 18281,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3802,
+								3802
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2852.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 22,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/Users/Din/Desktop/QVI/simstage/calsuites.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10051,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4201,
+								4201
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/Users/Din/Desktop/QVI/simstage/stages.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1800,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								110,
+								110
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 69.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/C/Users/Din/Desktop/QVI/simstage/mathhelper.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8849,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7713,
+								7713
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 16,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/C/Users/Din/Desktop/QVI/sonic/sp25mode.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 32063,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								22845,
+								22845
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 653.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/C/Users/Din/Desktop/QVI/code/err_diff_sim.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 969,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								281,
+								281
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 15,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/C/Users/Din/Desktop/QVI/simstage/calibrate.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 16017,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5494,
+								5494
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3174.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 7,
+					"file": "/C/Users/Din/Desktop/QVI/simstage/interface.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6649,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 20,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "/C/Users/Din/Desktop/QVI/sonic/advmotion.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 15587,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2005,
+								2005
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1877.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "/C/Users/Din/Desktop/QVI/sonic/vector.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1465,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								308,
+								308
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 146.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 17,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "spaker_btfo.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 134,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								134,
+								134
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 21,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "/C/Users/Din/Desktop/QVI/sonic/vecmath.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4326,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1029,
+								1033
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 920.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 19,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "/C/Users/Din/Desktop/QVI/sonic/rotary.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 13783,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4918,
+								4918
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 4347.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 18,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 6,
+			"sheets":
+			[
+				{
+					"buffer": 13,
+					"file": "c_practice.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2239,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2212,
+								2212
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 2070.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "linear_ops.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5075,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4616,
+								4616
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 4394.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "neon_wrappers.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1773,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								670,
+								670
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 483.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "neon_tests.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 173,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "/C/Users/Din/Desktop/QVI/sonic/arm.mak",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3359,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1145,
+								1092
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Makefile/Makefile.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"file": "makefile",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 90,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								89,
+								89
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Makefile/Makefile.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 19,
+					"file": "neon_matrix_mult.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 365,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								364,
+								364
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 20,
+					"file": "test_linear.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1154,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								452,
+								314
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 21,
+					"file": "/C/Users/Din/Desktop/jeff.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 156,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								154,
+								154
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 22,
+					"file": "/C/Users/Din/Desktop/grypnpyget - Boba Beach.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 24,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								24
+							]
+						],
+						"settings":
+						{
+							"auto_name": "grypnpyget - Boba Beach",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 32.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				2
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			],
+			[
+				1,
+				1,
+				2,
+				2
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.449404761905,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			0.216280582077,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "/C/Users/Din/Desktop/QVI/test_project.sublime-project",
+	"replace":
+	{
+		"height": 60.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 2,
+	"settings":
+	{
+		"last_automatic_layout":
+		[
+			[
+				0,
+				0,
+				1,
+				2
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			],
+			[
+				1,
+				1,
+				2,
+				2
+			]
+		]
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
