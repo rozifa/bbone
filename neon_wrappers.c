@@ -51,9 +51,9 @@ int main(){
     fVector vector2 = {};
     vector2=float32_to_fvector(neon_vector);
     
-    fVector v4 = {.x = 130.234, y = 2.4, z = 8.25};
-	fVector v5 = {.x = 234, y = 1.7, z = 9.25};
-	fVector v6 = {.x = 224, y = 5.234, z = 12.25};
+    fVector v4 = {.x = 130.234, .y = 2.4, .z = 8.25};
+	fVector v5 = {.x = 234, .y = 1.7, .z = 9.25};
+	fVector v6 = {.x = 224, .y = 5.234, .z = 12.25};
 
     Matrix matrix1 = {.a = v4, .b = v5, .c = v6};
     float32x4_t neon_matrix = Matrix_wrapper(matrix1);
