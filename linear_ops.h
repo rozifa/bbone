@@ -160,7 +160,7 @@ Cofactor cofactor(Matrix m){
 								 .b.x = m.c.y, .b.y = m.c.z},
 					   .two   = {.a.x = m.a.y, .a.y = m.a.z,
 					   			 .b.x = m.c.y, .b.y = m.c.z},
-					   .three = {.a.x = m.a.y, .a.y = m.y.z, 
+					   .three = {.a.x = m.a.y, .a.y = m.a.z, 
 					   			 .b.x = m.b.y, .b.y = m.b.z}};
 
 	return result;
