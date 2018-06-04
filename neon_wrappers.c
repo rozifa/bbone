@@ -25,7 +25,7 @@ float32x4_t fVector_wrapper(fVector vector){
 
 float Matrix_wrapper(Matrix matrix){ //im falling asleep 
 	// Code goes here.
-	float neon_mat[3]
+	float neon_mat[3];
 
 	float32x4_t col1 = fVector_wrapper(matrix.a);
 	float32x4_t col2 = fVector_wrapper(matrix.b);
