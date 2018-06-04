@@ -1,3 +1,2 @@
-LDLIBS=$(shell $(XENOCONFIG) --skin=native --ldflags
-
-)CFLAGS=-mfloat-abi=hard -mfpu=neon
+LDLIBS=$(shell $(XENOCONFIG) --skin=native --ldflags)
+CFLAGS=-mfloat-abi=hard -mfpu=neon
