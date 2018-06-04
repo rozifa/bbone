@@ -10,19 +10,29 @@ typedef struct _fVector {
 		float z; 
 		float w;
 	} fVector;
-
+/*
 //Matrix
 typedef struct _Matrix{
 	fVector a;
 	fVector b;
 	fVector c;
 } Matrix;
-
+*/
 float32x4_t fVector_wrapper(fVector vector){
 	float32x4_t neon_vec = vld1q_f32((float*)(&vector)); // ARM Neon Intrinsic to load a vect.
 	return neon_vec;
 }
 
+fVector float32_to_fvector(float32x4_t f32){
+    fVector result = {};
+    float* retfl = (float*)(&result);
+    retfl[0] = vgetq_lane_f32(f32, 0);
+    retfl[1] = vgetq_lane_f32(f32, 1);
+    retfl[2] = vgetq_lane_f32(f32, 2);
+    retfl[3] = vgetq_lane_f32(f32, 3);
+    return result;
+}
+/*
 float Matrix_wrapper(Matrix matrix){ //im falling asleep 
 	// Code goes here.
 	float neon_mat[3];
@@ -37,18 +47,9 @@ float Matrix_wrapper(Matrix matrix){ //im falling asleep
 	
 	return neon_mat;
 }
+*/
 
-fVector float32_to_fvector(float32x4_t f32){
-    fVector result = {};
-    float* retfl = (float*)(&result);
-    retfl[0] = vgetq_lane_f32(f32, 0);
-    retfl[1] = vgetq_lane_f32(f32, 1);
-    retfl[2] = vgetq_lane_f32(f32, 2);
-    retfl[3] = vgetq_lane_f32(f32, 3);
-    return result;
-}
-
-
+/*
 //testing 
 int main(){
 	//Test Wrapped Vect
@@ -78,3 +79,4 @@ int main(){
 	}
 return 0;
 }
+*/
