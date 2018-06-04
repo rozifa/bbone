@@ -26,12 +26,6 @@ float32x4_t neon_vector5 = fVector_wrapper(v5);
 float32x4_t neon_vector6 = fVector_wrapper(v6);
 
 int main(){
-    
-	
-	
-
-
-
     fVector vector2 = {};
     vector2=float32_to_fvector(neon_vector1);
 
