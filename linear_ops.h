@@ -4,6 +4,7 @@
 
 //Drew's Data Types:
 // I guess these are faster than the Neon for small operations on short vectors etc. 
+// However, the neon wrappers may be faster (especially for more operations)?
 typedef struct _fVector{
 	float x; 
 	float y; 
