@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <linear_ops.h>
+#include "linear_ops.h"
 #include <arm_neon.h>
 #include <neon_wrappers.h> // have to include the .c as a .h 
 
