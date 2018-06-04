@@ -197,7 +197,7 @@ float fVecTOarray(fVector vector){
 
 	return converted;
 }
-
+/*
 // This is all wrong...
 float MatrixTOarray(Matrix matrix){
 	float converted[3][3];
@@ -222,8 +222,8 @@ float MatrixTOarray(Matrix matrix){
 	}
 	return converted;
 }
-
-void arrayTOmatrix(float array){
+*/
+/* void arrayTOmatrix(float array){
 
 	void result;
 
@@ -237,4 +237,4 @@ void arrayTOmatrix(float array){
 
 	return result;
 
-}
+} */
