@@ -65,7 +65,7 @@ int main(){
 		printf("The %d entry is: %f\n", i, neon_vector[i]);
 	}
 
-	for (i=0; i<=2, i++){
+	for (i=0; i<=2; i++){
 		printf("The %d column is: %f\n", i, neon_matrix[i]);
 	}
 return 0;
