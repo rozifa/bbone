@@ -156,16 +156,12 @@ typedef struct _Cofactor{
 } Cofactor;
 
 Cofactor cofactor(Matrix m){
-	Cofactor result;
-
-	result.one = {.a.x = m.b.y, .a.y = m.b.z, 
-				  .b.x = m.c.y, .b.y = m.c.z}; 
-
-	result.two = {.a.x = m.a.y, .a.y = m.a.z ,
-				  .b.x = m.c.y, .b.y = m.c.z};
-
-	result.three = {.a.x = m.a.y, .a.y = m.y.z ,
-					.b.x = m.b.y, .b.y = m.b.z};
+	Cofactor result = {.one   = {.a.x = m.b.y, .a.y = m.b.z, 
+								 .b.x = m.c.y, .b.y = m.c.z},
+					   .two   = {.a.x = m.a.y, .a.y = m.a.z,
+					   			 .b.x = m.c.y, .b.y = m.c.z},
+					   .three = {.a.x = m.a.y, .a.y = m.y.z, 
+					   			 .b.x = m.b.y, .b.y = m.b.z}};
 
 	return result;
 }
