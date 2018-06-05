@@ -9,9 +9,9 @@
 int main(){
 	//Initalize test vectors
 
-	fVector v1 = {.x = 3.5, .y = 3.14, .z = 4.3}; //arbitrary 
-	fVector v2 = {.x = 7.69, .y = 10, .z = 96.2};
-	fVector v3 = {.x = 2.23, .y = 1.234, .z = 3.12};
+	fVector v1 = {.x = 3.5f, .y = 3.14f, .z = 4.3f}; //arbitrary 
+	fVector v2 = {.x = 7.69f, .y = 10f, .z = 96.2f};
+	fVector v3 = {.x = 2.23f, .y = 1.234f, .z = 3.12f};
 
 	fVector v4 = {.x = 130.234, .y = 2.4, .z = 8.25};
 	fVector v5 = {.x = 234, .y = 1.7, .z = 9.25};
