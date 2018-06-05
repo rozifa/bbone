@@ -41,7 +41,9 @@ int main(){
 	}
 
 	//Test linear ops functions
-	float det_m1 = determinant(m1);
+	float det_m1; 
+	det_m1 = determinant(m1);
+	float* dm1 = (float*)(&det_m1);
 	printf("The determinent of m1 is: %d\n.", det_m1);
 
 return 0;
