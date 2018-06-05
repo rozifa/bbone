@@ -47,8 +47,10 @@ int main(){
 	com1 = cofactor(m1);
 	printf("The determinent of m1 is: %f.\n", det_m1);
 
-	printf("%f %f\n", com1.one.a.x, com1.one.b.x);
-	printf("%f %f\n", com1.one.a.y, com1.one.b.y);
+	printf("-- --");
+	printf("|%f %f\n|", com1.one.a.x, com1.one.b.x);
+	printf("|%f %f\n|", com1.one.a.y, com1.one.b.y);
+	printf("-- --");
 
 return 0;
 }
