@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <time.h>
 #include <arm_neon.h>
 #include "linear_ops.h"
 #include "neon_wrappers.h"
@@ -31,15 +32,6 @@ int main(){
 	float32x4_t neon_vector5 = fVector_wrapper(v5);
 	float32x4_t neon_vector6 = fVector_wrapper(v6);
 
-    fVector vector2 = {};
-    vector2=float32_to_fvector(neon_vector1);
-
-    float* v2fl = (float*)(&vector2);
-    int i;
-	//Test if conversion worked by printing entries 
-    for (i = 0; i <= 3; i++){
-		printf("The %d entry is: %f\n", i, neon_vector1[i]);
-	}
 
 	//Test linear ops functions
 	float det_m1; 
@@ -68,5 +60,31 @@ int main(){
 
 	Matrix tm2bym2_2 = MatrixByMatrixTranspose(m2, m2);
 	print_matrix(tm2bym2_2);
+
+
+    fVector vector2 = {};
+    vector2=float32_to_fvector(neon_vector1);
+
+    clock_t t;
+    t = clock();
+    //neon version
+    float* v2fl = (float*)(&vector2);
+    int i;
+	//Test if conversion worked by printing entries 
+    for (i = 0; i <= 3; i++){
+		printf("READ FROM NEON VECTOR:\n");
+		printf("The %d entry is: %f\n", i, neon_vector1[i]);
+	}
+	t = clock() - t;
+	double time_taken = ((double)t)/CLOCKS_PER_SEC;
+	printf("NEON took %f seconds.\n", time_taken);
+
+	t2 = clock();
+	//struct version
+	print_vector(vector2);
+	t2 = clock() - t2;
+	double time_taken2 = ((double)t2)/CLOCKS_PER_SEC;
+	printf("STRUCT took %f seconds.\n", time_taken2); 
+	
 return 0;
 }
