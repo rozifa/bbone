@@ -60,7 +60,7 @@ int main(){
 	printf("%f %f %f", m4.a.y, m4.b.y, m4.c.y);
 	printf("%f %f %f", m4.a.z, m4.b.z, m4.c.z);
 
-	Matrix m5 = transform(v1, m4);
+	fVector m5 = transform(v1, m4);
 	printf("%f %f %f", m5.a.x, m5.b.x, m5.c.x);
 	printf("%f %f %f", m5.a.y, m5.b.y, m5.c.y);
 	printf("%f %f %f", m5.a.z, m5.b.z, m5.c.z);
