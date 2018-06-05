@@ -3,13 +3,16 @@
 //These functions are to be used in test_linear.c to execute the enccassary tests
 
 //print entries of a neon array 
-fVector vector2 = {};
-vector2 = float32_to_fvector(neon_vector1);
+void print_matrix(matrix){
+	printf("%f %f %f\n", matrix.a.x, matrix.b.x, matrix.c.x);
+	printf("%f %f %f\n", matrix.a.y, matrix.b.y, matrix.c.y);
+	printf("%f %f %f\n", matrix.a.z, matrix.b.z, matrix.c.z);
+}
 
-float* v2fl = (float*)(&vector2);
-int i;
-//Test if conversion worked by printing entries 
-for (i = 0; i <= 3; i++){
-printf("The %d entry is: %f\n", i, neon_vector1[i]);
+void print_vector(vector){
+	printf("%f\n", vector.x);
+	printf("%f\n", vector.y);
+	printf("%f\n", vector.z);
+}
 
 
