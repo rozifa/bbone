@@ -9,9 +9,9 @@
 int main(){
 	//Initalize test vectors
 
-	fVector v1 = {.x = 3.5f, .y = 3.14f, .z = 4.3f}; //arbitrary 
-	fVector v2 = {.x = 7.69f, .y = 10.0f, .z = 96.2f};
-	fVector v3 = {.x = 2.23f, .y = 1.234f, .z = 3.12f};
+	fVector v1 = {.x = 1.0, .y = 0.0, .z = 0.0}; //arbitrary 
+	fVector v2 = {.x = 0.0, .y = 1.0, .z = 0.0};
+	fVector v3 = {.x = 0.0, .y = 0.0, .z = 1.0};
 
 	fVector v4 = {.x = 130.234, .y = 2.4, .z = 8.25};
 	fVector v5 = {.x = 234.0, .y = 1.7, .z = 9.25};
@@ -43,7 +43,6 @@ int main(){
 	//Test linear ops functions
 	float det_m1; 
 	det_m1 = determinant(m1);
-	float* dm1 = (float*)(&det_m1);
 	printf("The determinent of m1 is: %d\n.", det_m1);
 
 return 0;
