@@ -1,5 +1,5 @@
 //Various custom data types and linear algebra operations that can be done with them.
-
+//Replace vectormath.c with all these bad boys...
 //Data types
 typedef struct _fVector{
 	float x; 
