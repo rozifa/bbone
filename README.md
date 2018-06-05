@@ -1,4 +1,6 @@
 # bbone
+Linear_ops functions are now all working. 
+
 Testing ARM Neon code and Vector operations.
 
 This repo contains some practice C code I wrote (in one file) to learn C so that I could interact with the NEON. The rest of the code is header files containing the definitions or various linear algebra data structures and the definitions of various functions that can be performe don them.

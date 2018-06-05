@@ -20,7 +20,7 @@ typedef struct _Matrix{
 	fVector c;
 } Matrix;
 */
-
+//Need these to manage matrices as well...
 //Wrapper function: fVector --> NEON Vector
 float32x4_t fVector_wrapper(fVector vector){
 	float32x4_t neon_vec = vld1q_f32((float*)(&vector)); // ARM Neon Intrinsic to load a vect.
