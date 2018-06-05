@@ -47,10 +47,38 @@ int main(){
 	com1 = cofactor(m1);
 	printf("The determinent of m1 is: %f.\n", det_m1);
 
-	printf("-- --");
-	printf("|%f %f\n|", com1.one.a.x, com1.one.b.x);
-	printf("|%f %f\n|", com1.one.a.y, com1.one.b.y);
-	printf("-- --");
+	printf("%f %f\n", com1.one.a.x, com1.one.b.x);
+	printf("%f %f\n", com1.one.a.y, com1.one.b.y);
+
+	Matrix m3 = MatAdd(m1, m2);
+	printf("%f %f %f", m3.a.x, m3.b.x, m3.c.x);
+	printf("%f %f %f", m3.a.y, m3.b.y, m3.c.y);
+	printf("%f %f %f", m3.a.z, m3.b.z, m3.c.z);
+
+	Matrix m4 = MatSub(m3, m1);
+	printf("%f %f %f", m4.a.x, m4.b.x, m4.c.x);
+	printf("%f %f %f", m4.a.y, m4.b.y, m4.c.y);
+	printf("%f %f %f", m4.a.z, m4.b.z, m4.c.z);
+
+	Matrix m5 = transform(v1, m4);
+	printf("%f %f %f", m5.a.x, m5.b.x, m5.c.x);
+	printf("%f %f %f", m5.a.y, m5.b.y, m5.c.y);
+	printf("%f %f %f", m5.a.z, m5.b.z, m5.c.z);
+
+	Matrix tm5 = transpose(m5);
+	printf("%f %f %f", tm5.a.x, tm5.b.x, tm5.c.x);
+	printf("%f %f %f", tm5.a.y, tm5.b.y, tm5.c.y);
+	printf("%f %f %f", tm5.a.z, tm5.b.z, tm5.c.z);
+
+	Matrix tm5bym5 = mat_mult(m5, tm5);
+	printf("%f %f %f", tm5bym5.a.x, tm5bym5.b.x, tm5bym5.c.x);
+	printf("%f %f %f", tm5bym5.a.y, tm5bym5.b.y, tm5bym5.c.y);
+	printf("%f %f %f", tm5bym5.a.z, tm5bym5.b.z, tm5bym5.c.z);
+
+	Matrix tm5bym5_2 = MatrixByMatrixTranspose(m5, m5);
+	printf("%f %f %f", tm5bym5_2.a.x, tm5bym5_2.b.x, tm5bym5_2.c.x);
+	printf("%f %f %f", tm5bym5_2.a.y, tm5bym5_2.b.y, tm5bym5_2.c.y);
+	printf("%f %f %f", tm5bym5_2.a.z, tm5bym5_2.b.z, tm5bym5_2.c.z);
 
 return 0;
 }
