@@ -39,5 +39,10 @@ int main(){
     for (i = 0; i <= 3; i++){
 		printf("The %d entry is: %f\n", i, neon_vector1[i]);
 	}
+
+	//Test linear ops functions
+	float det_m1 = determinant(m1);
+	print("The determinent of m1 is: %d\n.", det_m1);
+
 return 0;
 }
