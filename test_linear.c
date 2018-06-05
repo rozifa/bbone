@@ -9,9 +9,9 @@
 int main(){
 	//Initalize test vectors
 
-	fVector v1 = {.x = 1.0, .y = 0.0, .z = 0.0}; //arbitrary 
-	fVector v2 = {.x = 0.0, .y = 1.0, .z = 0.0};
-	fVector v3 = {.x = 0.0, .y = 0.0, .z = 1.0};
+	fVector v1 = {.x = 37.0, .y = 25.69, .z = 73.0}; //arbitrary 
+	fVector v2 = {.x = 2.0, .y = 15.15, .z = 36.63};
+	fVector v3 = {.x = 93.93, .y = 16.0, .z = 7.0};
 
 	fVector v4 = {.x = 130.234, .y = 2.4, .z = 8.25};
 	fVector v5 = {.x = 234.0, .y = 1.7, .z = 9.25};
@@ -45,7 +45,7 @@ int main(){
 	det_m1 = determinant(m1);
 	Cofactor com1;
 	com1 = cofactor(m1);
-	printf("The determinent of m1 is: %f\n.", det_m1);
+	printf("The determinent of m1 is: %f.\n", det_m1);
 
 	printf("%f %f\n", com1.one.a.x, com1.one.b.x);
 	printf("%f %f\n", com1.one.a.y, com1.one.b.y);
