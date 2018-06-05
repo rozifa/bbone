@@ -14,17 +14,17 @@ const fVector v5 = {.x = 234, .y = 1.7, .z = 9.25};
 const fVector v6 = {.x = 224, .y = 5.234, .z = 12.25};
 
 //Initilize test matrices++
-Matrix m1 = {.a = v1, .b = v2, .c = v3};
-Matrix m2 = {.a = v4, .b = v5, .c = v6};
+const Matrix m1 = {.a = v1, .b = v2, .c = v3};
+const Matrix m2 = {.a = v4, .b = v5, .c = v6};
 
 //Neonize the vects
-float32x4_t neon_vector1 = fVector_wrapper(v1);
-float32x4_t neon_vector2 = fVector_wrapper(v2);
-float32x4_t neon_vector3 = fVector_wrapper(v3);
+const float32x4_t neon_vector1 = fVector_wrapper(v1);
+const float32x4_t neon_vector2 = fVector_wrapper(v2);
+const float32x4_t neon_vector3 = fVector_wrapper(v3);
 
-float32x4_t neon_vector4 = fVector_wrapper(v4);
-float32x4_t neon_vector5 = fVector_wrapper(v5);
-float32x4_t neon_vector6 = fVector_wrapper(v6);
+const float32x4_t neon_vector4 = fVector_wrapper(v4);
+const float32x4_t neon_vector5 = fVector_wrapper(v5);
+const float32x4_t neon_vector6 = fVector_wrapper(v6);
 
 
 //test function
