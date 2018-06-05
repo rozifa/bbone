@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"b",
+				"b"
+			],
+			[
 				"univers",
 				"universe_of_defects"
 			],
@@ -58,10 +62,6 @@
 			[
 				"c",
 				"c"
-			],
-			[
-				"b",
-				"b"
 			],
 			[
 				"re",
@@ -230,62 +230,19 @@
 			}
 		},
 		{
-			"file": "c_practice.c",
+			"file": "neon_wrappers.h",
 			"settings":
 			{
-				"buffer_size": 2239,
+				"buffer_size": 2044,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "linear_ops.c",
+			"file": "linear_ops.h",
 			"settings":
 			{
-				"buffer_size": 5075,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "neon_wrappers.c",
-			"settings":
-			{
-				"buffer_size": 1773,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "neon_tests.c",
-			"settings":
-			{
-				"buffer_size": 173,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/Din/Desktop/QVI/sonic/arm.mak",
-			"settings":
-			{
-				"buffer_size": 3359,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "makefile",
-			"settings":
-			{
-				"buffer_size": 90,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "neon_matrix_mult.c",
-			"settings":
-			{
-				"buffer_size": 365,
+				"buffer_size": 5285,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -294,28 +251,18 @@
 			"file": "test_linear.c",
 			"settings":
 			{
+				"buffer_size": 1258,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "README.md",
+			"settings":
+			{
 				"buffer_size": 1154,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/Din/Desktop/jeff.c",
-			"settings":
-			{
-				"buffer_size": 156,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/Din/Desktop/grypnpyget - Boba Beach.txt",
-			"settings":
-			{
-				"buffer_size": 24,
-				"encoding": "UTF-8",
-				"line_ending": "Windows",
-				"name": "grypnpyget - Boba Beach"
 			}
 		}
 	],
@@ -330,6 +277,14 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"Package Install ",
+				"Package Control: Install Package"
+			],
+			[
+				"Install Pack",
+				"Install Package Control"
+			],
 			[
 				"vme",
 				"View: Toggle Menu"
@@ -355,6 +310,19 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Din/AppData/Roaming/Sublime Text 3/Packages/User/SublimeTextTrans.sublime-settings",
+		"/C/Users/Din/Desktop/QVI/C Practice Code/neon_wrappers.h.c",
+		"/C/Users/Din/Desktop/QVI/C Practice Code/linear_ops.h",
+		"/C/Users/Din/Desktop/QVI/C Practice Code/c_practice.c",
+		"/C/Users/Din/Desktop/QVI/C Practice Code/neon_matrix_mult.c",
+		"/C/Program Files/Git/ReleaseNotes.html",
+		"/C/Users/Din/Desktop/QVI/C Practice Code/git_test_code.c",
+		"/C/Users/Din/Desktop/grypnpyget - Boba Beach.txt",
+		"/C/Users/Din/Desktop/QVI/C Practice Code/neon_tests.c",
+		"/C/Users/Din/Desktop/QVI/C Practice Code/makefile",
+		"/C/Users/Din/Desktop/QVI/sonic/arm.mak",
+		"/C/Users/Din/Desktop/QVI/C Practice Code/test_linear.c",
+		"/C/Users/Din/Desktop/jeff.c",
 		"/C/Users/Din/Desktop/QVI/code/ex9.c",
 		"/E/home/debian/din-c/test_transfer.c",
 		"/C/Users/Din/Desktop/QVI/code/ex8.c",
@@ -365,9 +333,7 @@
 		"/C/Users/Din/Desktop/QVI/code/ex3.c",
 		"/C/Users/Din/Desktop/QVI/code/ex2.c",
 		"/C/Users/Din/Desktop/QVI/code/zed_1.c",
-		"/C/Users/Din/Desktop/QVI/C Practice Code/neon_tests.c",
 		"/D/readme.html",
-		"/C/Users/Din/Desktop/QVI/C Practice Code/test_linear.c",
 		"/C/Users/Din/Desktop/QVI/sonic/240x_vector.h",
 		"/C/Users/Din/Desktop/QVI/code/error_code.py",
 		"/C/Users/Din/Desktop/QVI/sonic/embedpy.c",
@@ -403,6 +369,14 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"cross_1",
+			",\n",
+			"fVector",
+			"fvector",
+			"fVector",
+			"fvector",
+			"fVector",
+			"fvector",
 			"native",
 			"ret",
 			"float32x4_t",
@@ -429,7 +403,7 @@
 	"groups":
 	[
 		{
-			"selected": 6,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -459,7 +433,7 @@
 						"translation.y": 2852.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 22,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -489,7 +463,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
@@ -519,7 +493,7 @@
 						"translation.y": 69.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
@@ -549,7 +523,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 16,
+					"stack_index": 11,
 					"type": "text"
 				},
 				{
@@ -579,7 +553,7 @@
 						"translation.y": 653.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 14,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
@@ -608,7 +582,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 15,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
@@ -624,8 +598,8 @@
 						"selection":
 						[
 							[
-								5494,
-								5494
+								6604,
+								6604
 							]
 						],
 						"settings":
@@ -635,10 +609,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3174.0,
+						"translation.y": 2967.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 5,
 					"type": "text"
 				}
 			]
@@ -674,7 +648,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 20,
+					"stack_index": 15,
 					"type": "text"
 				},
 				{
@@ -701,10 +675,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1877.0,
+						"translation.y": 1887.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
@@ -733,7 +707,7 @@
 						"translation.y": 146.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 17,
+					"stack_index": 12,
 					"type": "text"
 				},
 				{
@@ -761,7 +735,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 21,
+					"stack_index": 16,
 					"type": "text"
 				},
 				{
@@ -790,7 +764,7 @@
 						"translation.y": 920.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 19,
+					"stack_index": 14,
 					"type": "text"
 				},
 				{
@@ -819,114 +793,87 @@
 						"translation.y": 4347.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 18,
+					"stack_index": 13,
 					"type": "text"
 				}
 			]
 		},
 		{
-			"selected": 6,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 13,
-					"file": "c_practice.c",
+					"file": "neon_wrappers.h",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2239,
+						"buffer_size": 2044,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2212,
-								2212
+								879,
+								879
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/C++/C.sublime-syntax"
+							"syntax": "Packages/C++/C++.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 2070.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 14,
-					"file": "linear_ops.c",
+					"file": "linear_ops.h",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5075,
+						"buffer_size": 5285,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4616,
-								4616
+								3591,
+								3591
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/C++/C.sublime-syntax"
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 4394.0,
+						"translation.y": 3468.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 15,
-					"file": "neon_wrappers.c",
+					"file": "test_linear.c",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1773,
+						"buffer_size": 1258,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								670,
-								670
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 483.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 16,
-					"file": "neon_tests.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 173,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
+								18,
+								18
 							]
 						],
 						"settings":
@@ -941,93 +888,8 @@
 					"type": "text"
 				},
 				{
-					"buffer": 17,
-					"file": "/C/Users/Din/Desktop/QVI/sonic/arm.mak",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3359,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1145,
-								1092
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Makefile/Makefile.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 18,
-					"file": "makefile",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 90,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								89,
-								89
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Makefile/Makefile.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 19,
-					"file": "neon_matrix_mult.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 365,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								364,
-								364
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 20,
-					"file": "test_linear.c",
+					"buffer": 16,
+					"file": "README.md",
 					"semi_transient": false,
 					"settings":
 					{
@@ -1038,76 +900,19 @@
 						"selection":
 						[
 							[
-								452,
-								314
+								990,
+								990
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/C++/C.sublime-syntax"
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
-					"type": "text"
-				},
-				{
-					"buffer": 21,
-					"file": "/C/Users/Din/Desktop/jeff.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 156,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								154,
-								154
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 12,
-					"type": "text"
-				},
-				{
-					"buffer": 22,
-					"file": "/C/Users/Din/Desktop/grypnpyget - Boba Beach.txt",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 24,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								24
-							]
-						],
-						"settings":
-						{
-							"auto_name": "grypnpyget - Boba Beach",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 13,
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -1147,13 +952,13 @@
 		"cols":
 		[
 			0.0,
-			0.449404761905,
+			0.39880952381,
 			1.0
 		],
 		"rows":
 		[
 			0.0,
-			0.216280582077,
+			0.21729478086,
 			1.0
 		]
 	},

@@ -166,7 +166,7 @@ Cofactor cofactor(Matrix m){
 }
 
 //Compute the determinent of a 3x3 matrix via use of the cofactors
-Matrix determinant(Matrix m){
+float determinant(Matrix m){
 	float result;
 
 	Cofactor cofacs = cofactor(m);
@@ -196,10 +196,9 @@ float fVecTOarray(fVector vector){
 }
 
 
-
 /*
 // This is all wrong...
-//Maybe come back to this..was tired
+//Maybe come back to this..was
 float MatrixTOarray(Matrix matrix){
 	float converted[3][3];
 	float cols[3];
