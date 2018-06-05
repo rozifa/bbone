@@ -65,20 +65,20 @@ int main(){
 	printf("%f", mv5.y);
 	printf("%f", mv5.z);
 
-	Matrix tm5 = transpose(m5);
+	Matrix tm2 = transpose(m2);
 	printf("%f %f %f", tm5.a.x, tm5.b.x, tm5.c.x);
 	printf("%f %f %f", tm5.a.y, tm5.b.y, tm5.c.y);
 	printf("%f %f %f", tm5.a.z, tm5.b.z, tm5.c.z);
 
-	Matrix tm5bym5 = mat_mult(m5, tm5);
-	printf("%f %f %f", tm5bym5.a.x, tm5bym5.b.x, tm5bym5.c.x);
-	printf("%f %f %f", tm5bym5.a.y, tm5bym5.b.y, tm5bym5.c.y);
-	printf("%f %f %f", tm5bym5.a.z, tm5bym5.b.z, tm5bym5.c.z);
+	Matrix tm2bym2 = mat_mult(m2, tm2);
+	printf("%f %f %f", tm2bym2.a.x, tm2bym2.b.x, tm2bym2.c.x);
+	printf("%f %f %f", tm2bym2.a.y, tm2bym2.b.y, tm2bym2.c.y);
+	printf("%f %f %f", tm2bym2.a.z, tm2bym2.b.z, tm2bym2.c.z);
 
-	Matrix tm5bym5_2 = MatrixByMatrixTranspose(m5, m5);
-	printf("%f %f %f", tm5bym5_2.a.x, tm5bym5_2.b.x, tm5bym5_2.c.x);
-	printf("%f %f %f", tm5bym5_2.a.y, tm5bym5_2.b.y, tm5bym5_2.c.y);
-	printf("%f %f %f", tm5bym5_2.a.z, tm5bym5_2.b.z, tm5bym5_2.c.z);
+	Matrix tm2bym2_2 = MatrixByMatrixTranspose(m2, m2);
+	printf("%f %f %f", tm2bym2_2.a.x, tm2bym2_2.b.x, tm2bym2_2.c.x);
+	printf("%f %f %f", tm2bym2_2.a.y, tm2bym2_2.b.y, tm2bym2_2.c.y);
+	printf("%f %f %f", tm2bym2_2.a.z, tm2bym2_2.b.z, tm2bym2_2.c.z);
 
 return 0;
 }
