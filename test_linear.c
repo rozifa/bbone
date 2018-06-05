@@ -66,9 +66,9 @@ int main(){
 	printf("%f", mv5.z);
 
 	Matrix tm2 = transpose(m2);
-	printf("%f %f %f", tm5.a.x, tm5.b.x, tm5.c.x);
-	printf("%f %f %f", tm5.a.y, tm5.b.y, tm5.c.y);
-	printf("%f %f %f", tm5.a.z, tm5.b.z, tm5.c.z);
+	printf("%f %f %f", tm2.a.x, tm2.b.x, tm2.c.x);
+	printf("%f %f %f", tm2.a.y, tm2.b.y, tm2.c.y);
+	printf("%f %f %f", tm2.a.z, tm2.b.z, tm2.c.z);
 
 	Matrix tm2bym2 = mat_mult(m2, tm2);
 	printf("%f %f %f", tm2bym2.a.x, tm2bym2.b.x, tm2bym2.c.x);
