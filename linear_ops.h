@@ -178,7 +178,7 @@ float determinant(Matrix m){
 	float term_2 = m.b.x * cross_2;
 	float term_3 = m.c.x * cross_3;
 
-	result = term_1 + term_2 + term_3;
+	result = term_1 - term_2 + term_3;
 
 	return result;
 }
