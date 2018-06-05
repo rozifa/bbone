@@ -184,7 +184,7 @@ float determinant(Matrix m){
 }
 
 //Array wrapper
-float fVecTOarray(fVector vector){
+float* fVecTOarray(fVector vector){
 
 	float converted[3];
 
