@@ -43,7 +43,12 @@ int main(){
 	//Test linear ops functions
 	float det_m1; 
 	det_m1 = determinant(m1);
+	Cofactor com1;
+	com1 = cofactor(m1);
 	printf("The determinent of m1 is: %d\n.", det_m1);
+
+	printf("%d %d\n", com1.a.x, com1.b.x);
+	printf("%d %d\n", com1.a.y, com1.b.y);
 
 return 0;
 }
