@@ -79,12 +79,12 @@ int main(){
 	double time_taken = ((double)t)/CLOCKS_PER_SEC;
 	printf("NEON took %f seconds.\n", time_taken);
 
-	t2 = clock();
+	clock_t t2 = clock();
 	//struct version
 	print_vector(vector2);
 	t2 = clock() - t2;
 	double time_taken2 = ((double)t2)/CLOCKS_PER_SEC;
 	printf("STRUCT took %f seconds.\n", time_taken2); 
-	
+
 return 0;
 }
