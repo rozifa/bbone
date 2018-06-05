@@ -2,7 +2,7 @@
 #include <arm_neon.h>
 #include "linear_ops.h"
 #include "neon_wrappers.h"
-#include "test_function.h"
+#include "test_functions.h"
 
 //test function
 // Here we want to call our various data structures 
