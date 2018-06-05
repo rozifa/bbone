@@ -61,9 +61,9 @@ int main(){
 	printf("%f %f %f", m4.a.z, m4.b.z, m4.c.z);
 
 	fVector mv5 = transform(v1, m4);
-	printf("%f", mv5x);
-	printf("%f", mv5y);
-	printf("%f", mv5z);
+	printf("%f", mv5.x);
+	printf("%f", mv5.y);
+	printf("%f", mv5.z);
 
 	Matrix tm5 = transpose(m5);
 	printf("%f %f %f", tm5.a.x, tm5.b.x, tm5.c.x);
