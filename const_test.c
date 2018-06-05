@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-
+//thanks fred
 
 int main(){
 
