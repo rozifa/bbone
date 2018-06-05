@@ -51,34 +51,34 @@ int main(){
 	printf("%f %f\n", com1.one.a.y, com1.one.b.y);
 
 	Matrix m3 = MatAdd(m1, m2);
-	printf("%f %f %f", m3.a.x, m3.b.x, m3.c.x);
-	printf("%f %f %f", m3.a.y, m3.b.y, m3.c.y);
-	printf("%f %f %f", m3.a.z, m3.b.z, m3.c.z);
+	printf("%f %f %f\n", m3.a.x, m3.b.x, m3.c.x);
+	printf("%f %f %f\n", m3.a.y, m3.b.y, m3.c.y);
+	printf("%f %f %f\n", m3.a.z, m3.b.z, m3.c.z);
 
 	Matrix m4 = MatSub(m3, m1);
-	printf("%f %f %f", m4.a.x, m4.b.x, m4.c.x);
-	printf("%f %f %f", m4.a.y, m4.b.y, m4.c.y);
-	printf("%f %f %f", m4.a.z, m4.b.z, m4.c.z);
+	printf("%f %f %f\n", m4.a.x, m4.b.x, m4.c.x);
+	printf("%f %f %f\n", m4.a.y, m4.b.y, m4.c.y);
+	printf("%f %f %f\n", m4.a.z, m4.b.z, m4.c.z);
 
 	fVector mv5 = transform(v1, m4);
-	printf("%f", mv5.x);
-	printf("%f", mv5.y);
-	printf("%f", mv5.z);
+	printf("%f\n", mv5.x);
+	printf("%f\n", mv5.y);
+	printf("%f\n", mv5.z);
 
 	Matrix tm2 = transpose(m2);
-	printf("%f %f %f", tm2.a.x, tm2.b.x, tm2.c.x);
-	printf("%f %f %f", tm2.a.y, tm2.b.y, tm2.c.y);
-	printf("%f %f %f", tm2.a.z, tm2.b.z, tm2.c.z);
+	printf("%f %f %f\n", tm2.a.x, tm2.b.x, tm2.c.x);
+	printf("%f %f %f\n", tm2.a.y, tm2.b.y, tm2.c.y);
+	printf("%f %f %f\n", tm2.a.z, tm2.b.z, tm2.c.z);
 
 	Matrix tm2bym2 = mat_mult(m2, tm2);
-	printf("%f %f %f", tm2bym2.a.x, tm2bym2.b.x, tm2bym2.c.x);
-	printf("%f %f %f", tm2bym2.a.y, tm2bym2.b.y, tm2bym2.c.y);
-	printf("%f %f %f", tm2bym2.a.z, tm2bym2.b.z, tm2bym2.c.z);
+	printf("%f %f %f\n", tm2bym2.a.x, tm2bym2.b.x, tm2bym2.c.x);
+	printf("%f %f %f\n", tm2bym2.a.y, tm2bym2.b.y, tm2bym2.c.y);
+	printf("%f %f %f\n", tm2bym2.a.z, tm2bym2.b.z, tm2bym2.c.z);
 
 	Matrix tm2bym2_2 = MatrixByMatrixTranspose(m2, m2);
-	printf("%f %f %f", tm2bym2_2.a.x, tm2bym2_2.b.x, tm2bym2_2.c.x);
-	printf("%f %f %f", tm2bym2_2.a.y, tm2bym2_2.b.y, tm2bym2_2.c.y);
-	printf("%f %f %f", tm2bym2_2.a.z, tm2bym2_2.b.z, tm2bym2_2.c.z);
+	printf("%f %f %f\n", tm2bym2_2.a.x, tm2bym2_2.b.x, tm2bym2_2.c.x);
+	printf("%f %f %f\n", tm2bym2_2.a.y, tm2bym2_2.b.y, tm2bym2_2.c.y);
+	printf("%f %f %f\n", tm2bym2_2.a.z, tm2bym2_2.b.z, tm2bym2_2.c.z);
 
 return 0;
 }
