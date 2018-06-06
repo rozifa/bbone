@@ -148,7 +148,7 @@ int main(){
 	clock_t t3;
 	t3 = clock();
 
-	while (k <= 1000001){
+	while (k <= trials){
 
 		test_boy3 = VMult(test_boy3, test_boy4);
 
@@ -162,7 +162,7 @@ int main(){
 
 
 
-//----------------- NEON MULTIPLICATION ------------------------
+//----------------- NEON ELEMENTWISE MULTIPLICATION ------------------------
 	fVector test_boy5 = {.x = 0.0001, .y = 0.013, .z = 0.0300202};
 	fVector test_boy6 = {.x = 2.01, .y = 3.44, .z = 5.6324};
 	float32x4_t neon_boy3 = fVector_wrapper(test_boy5);
@@ -173,7 +173,7 @@ int main(){
 	clock_t t4;
 	t4 = clock();
 
-	while (l <= 1000001){
+	while (l <= trials){
 
 		float32x4_t neon_boy3 = fVector_wrapper(test_boy5);
 		neon_boy3 = vmulq_f32(neon_boy3, neon_boy4);
@@ -188,6 +188,38 @@ int main(){
 	printf("NEON Mult. took %f seconds.\n", time_taken4);
 
 	print_assess(time_taken3, time_taken4);
+
+//---------------------- STRUCT MATRIX BY VECT (TRANS.) --------------
+
+
+
+
+//----------------------- NEON MATRIX BY VECT (TRANS.) ---------------
+
+	Matrix mat_boy = {.a = v1, .b = v2, .c = v3};
+	fVector test_boy7 = {.x = 0.0031, .y = 0.0044, .z = 0.0010304};
+	float32x4_t neon_mat_boy = //fMatrix_wrapper(mat_boy)...;
+	float32x4_t neon_test_boy = fVector_wrapper(test_boy7);
+
+	int d = 0;
+
+	clock_t t6;
+	t6 = clock();
+
+	while (d <= trials){
+
+		float32x4_t trans_boy = neon_transform(neon_mat_boy, neon_test_boy7);
+
+		d++;
+	}
+
+	t6 = clock() - t6;
+	double time_taken5 = (((double)t6)/CLOCKS_PER_SEC);
+	fVector backboy_3 = float32_to_fvector(neon_boy5);
+	print_vector(backboy_3);
+	printf("NEON Trans. took %f seconds. \n", time_taken5);
+
+	print_assess()
 
 return 0;
 }
