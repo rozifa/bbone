@@ -99,7 +99,7 @@ int main(){
 	int i = 0;
 	while (i <= 1000001){
 
-		fVector test_vector1 = VecAdd(test_vector1, test_vector2);
+		test_vector1 = VecAdd(test_vector1, test_vector2);
 		i++;
 
 	}
