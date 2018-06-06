@@ -109,7 +109,7 @@ int main(){
 	t = clock() - t;
 	double time_taken = (((double)t)/CLOCKS_PER_SEC);
 	print_vector(test_vector1);
-	printf("STRUCT took %f seconds.\n", time_taken);
+	printf("STRUCT Add. took %f seconds.\n", time_taken);
 // -------------- NEON ADDING ------------------------------------- 
 	fVector test_boy = {.x = 0.0001, .y = 0.013, .z = 0.0300202};
 	fVector test_boy2 = {.x = 0.00101, .y = 0.000001, .z = 0.00001};
@@ -135,7 +135,7 @@ int main(){
 	double time_taken2 = (((double)t2)/CLOCKS_PER_SEC);
 	fVector back_boy = float32_to_fvector(neon_boy);
 	print_vector(back_boy);
-	printf("NEON took %f seconds.\n", time_taken2); 
+	printf("NEON Add. took %f seconds.\n", time_taken2); 
 
 //--------------- STRUCT MULTIPLICATION -----------------------
 	fVector test_boy3 = {.x = 0.0001, .y = 0.013, .z = 0.0300202};
@@ -156,7 +156,7 @@ int main(){
 	t3 = clock() - t3;
 	double time_taken3 = (((double)t3)/CLOCKS_PER_SEC);
 	print_vector(test_boy3);
-	printf("STRUCT took %f seconds.\n", time_taken3);
+	printf("STRUCT Mult. took %f seconds.\n", time_taken3);
 
 
 
@@ -183,11 +183,114 @@ int main(){
 	double time_taken4 = (((double)t4)/CLOCKS_PER_SEC);
 	fVector back_boy2 = float32_to_fvector(neon_boy3);
 	print_vector(back_boy2);
-	printf("NEON took %f seconds.\n", time_taken4);
+	printf("NEON Mult. took %f seconds.\n", time_taken4);
 
 return 0;
 }
 
 
+// --------------------------------------------------------
+	//vmulq_f32() NEON Multiplication.
+	fVector v1 = {.x = 37.0, .y = 25.69, .z = 73.0}; //arbitrary 
+	fVector v2 = {.x = 2.0, .y = 15.15, .z = 36.63};
+	fVector v3 = {.x = 93.93, .y = 16.0, .z = 7.0};
 
-//vmulq_f32() NEON Multiplication.
+	fVector v4 = {.x = 130.234, .y = 2.4, .z = 8.25};
+
+	//Convert to neon
+	float32x4_t c1 = fVector_wrapper(v1);
+	float32x4_t c2 = fVector_wrapper(v2);
+	float32x4_t c3 = fVector_wrapper(v3);
+	float32x4_t c_vec = fVector_wrapper(v4); 
+//---------------------------------------------------------------	
+	vmulq_f32();
+
+	float32x4_t transform (float32x4_t * matrix, float32x4_t vector){
+		float32x4_t result;
+
+  		result = vml (matrix[0], vector);
+  		result = vmla (result, matrix[1], vector);
+  		result = vmla (result, matrix[2], vector);
+  		result = vmla (result, matrix[3], vector);
+
+  		return result;
+	}
+
+	static __always_inline float32x2_t dotProduct(float32x4x2_t input1, float32x4x2_t input2)
+{
+    float32x2_t d0, d1;
+    float32x4_t q0;
+    input1.val[0] = vmulq_f32(input1.val[0], input2.val[0]);
+    input1.val[1] = vmulq_f32(input1.val[1], input2.val[1]);
+
+    q0 = vaddq_f32(input1.val[0], input1.val[1]);
+    d0 = vget_low_f32(q0);
+    d1 = vget_high_f32(q0);
+    d0 = vpadd_f32(d0, d1);
+    d0 = vpadd_f32(d0, d1);
+    return d0;
+}
+
+void matMulF_neon(float *pDst, float *pMatA, float *pMatB)
+{
+    float32x4x4_t   line01, line23, line45, line67;
+    float32x4x2_t   b[8], *pA, *pB, temp;
+    float32x2x4_t   result;
+    uint32_t        i;
+
+    // vld4 for easier transpose
+    line01 = vld4q_f32(pMatB++);
+    line23 = vld4q_f32(pMatB++);
+    line45 = vld4q_f32(pMatB++);
+    line67 = vld4q_f32(pMatB);
+
+    // transpose MatB
+    vuzpq_f32(line01.val[0], line45.val[0]);
+    vuzpq_f32(line01.val[1], line45.val[1]);
+    vuzpq_f32(line01.val[2], line45.val[2]);
+    vuzpq_f32(line01.val[3], line45.val[3]);
+
+    vuzpq_f32(line23.val[0], line67.val[0]);
+    vuzpq_f32(line23.val[1], line67.val[1]);
+    vuzpq_f32(line23.val[2], line67.val[2]);
+    vuzpq_f32(line23.val[3], line67.val[3]);
+
+    // store MatB to stack
+    b[0].val[0] = line01.val[0];
+    b[0].val[1] = line01.val[1];
+    b[1].val[0] = line01.val[2];
+    b[1].val[1] = line01.val[3];
+    b[2].val[0] = line23.val[0];
+    b[2].val[1] = line23.val[1];
+    b[3].val[0] = line23.val[2];
+    b[3].val[1] = line23.val[3];
+
+    b[4].val[0] = line45.val[0];
+    b[4].val[1] = line45.val[1];
+    b[5].val[0] = line45.val[2];
+    b[5].val[1] = line45.val[3];
+    b[6].val[0] = line67.val[0];
+    b[6].val[1] = line67.val[1];
+    b[7].val[0] = line67.val[2];
+    b[7].val[1] = line67.val[3];
+
+    pA = (float32x4x2_t *) pMatA;
+    i = 8;
+    do
+    {
+        // just the right amount of data for aarch32 NEON register bank size
+        pB = b;
+        temp = *pA++;
+        result.val[0] = dotProduct(*pB++, temp);
+        result.val[1] = dotProduct(*pB++, temp);
+        result.val[2] = dotProduct(*pB++, temp);
+        result.val[3] = dotProduct(*pB++, temp);
+        vst4_lane_f32(pDst++, result, 0);
+
+        result.val[0] = dotProduct(*pB++, temp);
+        result.val[1] = dotProduct(*pB++, temp);
+        result.val[2] = dotProduct(*pB++, temp);
+        result.val[3] = dotProduct(*pB, temp);
+        vst4_lane_f32(pDst++, result, 0);
+    } while (--i);
+}
