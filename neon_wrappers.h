@@ -27,6 +27,14 @@ float32x4_t fVector_wrapper(fVector vector){
 	return neon_vec;
 }
 
+float32x4_t Matrix_wrapper(Matrix matrix){
+	float32x4_t neon_matrix = ;
+
+	//code goes here...
+
+	return neon_matrix;
+}
+
 //Inverse wrapper: NEON --> fVector
 fVector float32_to_fvector(float32x4_t f32){
     fVector result = {};
