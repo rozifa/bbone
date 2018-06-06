@@ -107,7 +107,7 @@ int main(){
 	}
 
 	t = clock() - t;
-	double time_taken = (((double)t)/CLOCKS_PER_SEC)/trials;
+	double time_taken = (((double)t)/CLOCKS_PER_SEC);
 	print_vector(test_vector1);
 	printf("STRUCT took %f seconds.\n", time_taken);
 // ------------------------------------------------------ 
@@ -127,7 +127,7 @@ int main(){
 	}
 
 	t2 = clock() - t2;
-	double time_taken2 = (((double)t)/CLOCKS_PER_SEC)/trials;
+	double time_taken2 = (((double)t)/CLOCKS_PER_SEC);
 	print_vector();
 	printf("NEON took %f seconds.\n", time_taken2); */
 
