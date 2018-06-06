@@ -94,13 +94,13 @@ int main(){
 	//clock_t t;
 	//t = clock();
 
-	fVector test_vector1 = {.x = 0.0001, .y = 0.013 .z = 0.0300202};
+	fVector test_vector1 = {.x = 0.0001, .y = 0.013, .z = 0.0300202};
 	fVector test_vector2 = {.x = 0.00101, .y = 0.000001, .z = 0.00001};
 	int i = 0;
 	while (i <= 1000001){
 
 		fVector test_vector1 = VecAdd(test_vector1, test_vector2);
-		i+=;
+		i++;
 
 	}
 
