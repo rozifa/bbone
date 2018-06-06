@@ -91,8 +91,8 @@ int main(){
 	printf("STRUCT took %f seconds.\n", time_taken2); 
 */
 
-	//clock_t t;
-	//t = clock();
+	clock_t t;
+	t = clock();
 
 	fVector test_vector1 = {.x = 0.0001, .y = 0.013, .z = 0.0300202};
 	fVector test_vector2 = {.x = 0.00101, .y = 0.000001, .z = 0.00001};
@@ -104,11 +104,11 @@ int main(){
 
 	}
 
+	t = clock() - t;
+	double time_taken = ((double)t)/CLOCKS_PER_SEC;
 	print_vector(test_vector1);
-
-
-	//t = clock() - t;
-	//double time_taken = ((double)t)/CLOCKS_PER_SEC;
+	rintf("STRUCT took %f seconds.\n", time_taken);
+	
 
 
 return 0;
