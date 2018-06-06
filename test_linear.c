@@ -161,10 +161,10 @@ int main(){
 
 
 //----------------- NEON MULTIPLICATION ------------------------
-	fVector test_boy3 = {.x = 0.0001, .y = 0.013, .z = 0.0300202};
-	fVector test_boy4 = {.x = 2.01, .y = 3.44, .z = 5.6324};
-	float32x4_t neon_boy3 = fVector_wrapper(test_boy3);
-	float32x4_t neon_boy4 = fVector_wrapper(test_boy4);
+	fVector test_boy5 = {.x = 0.0001, .y = 0.013, .z = 0.0300202};
+	fVector test_boy6 = {.x = 2.01, .y = 3.44, .z = 5.6324};
+	float32x4_t neon_boy3 = fVector_wrapper(test_boy5);
+	float32x4_t neon_boy4 = fVector_wrapper(test_boy6);
 
 	int l = 0;
 
@@ -173,7 +173,7 @@ int main(){
 
 	while (l <= 1000001){
 
-		float32x4_t neon_boy3 = fVector_wrapper(test_boy3);
+		float32x4_t neon_boy3 = fVector_wrapper(test_boy5);
 		neon_boy3 = vmulq_f32(neon_boy3, neon_boy4);
 
 		l++;
