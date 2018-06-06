@@ -137,6 +137,8 @@ int main(){
 	print_vector(back_boy);
 	printf("NEON Add. took %f seconds.\n", time_taken2); 
 
+	print_assess(time_taken, time_taken2);
+
 //--------------- STRUCT MULTIPLICATION -----------------------
 	fVector test_boy3 = {.x = 0.0001, .y = 0.013, .z = 0.0300202};
 	fVector test_boy4 = {.x = 2.01, .y = 3.44, .z = 5.6324};
@@ -184,6 +186,8 @@ int main(){
 	fVector back_boy2 = float32_to_fvector(neon_boy3);
 	print_vector(back_boy2);
 	printf("NEON Mult. took %f seconds.\n", time_taken4);
+
+	print_assess(time_taken3, time_taken4);
 
 return 0;
 }

@@ -106,7 +106,7 @@ fVector transform(fVector v, Matrix m){
 	return transformed;
 }
 
-float32x4_t transform(float32x4_t * matrix, float32x4_t vector){
+float32x4_t neon_transform(float32x4_t * matrix, float32x4_t vector){
 	float32x4_t result;
 
   	result = vml(matrix[0], vector);
