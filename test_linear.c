@@ -121,10 +121,10 @@ int main(){
 	
 	clock_t t2;
 	t2 = clock();
-
+	float32x4_t neon_boy = fVector_wrapper(test_boy); // only need to load this one once?
 	while (j <= trials){
 
-		float32x4_t neon_boy = fVector_wrapper(test_boy);
+		
 		float32x4_t neon_boy2 = fVector_wrapper(test_boy2);
 
 		neon_boy = vaddq_f32(neon_boy, neon_boy2);
