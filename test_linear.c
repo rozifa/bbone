@@ -117,16 +117,15 @@ int main(){
 	float32x4_t neon_boy = fVector_wrapper(test_boy);
 	float32x4_t neon_boy2 = fVector_wrapper(test_boy2);
 	
-	int i = 0;
-	int trials = 1000001;
+	int j = 0;
 	
 	clock_t t2;
 	t2 = clock();
 
-	while (i <= trials){
+	while (j <= trials){
 
-		neon_boy = vadd_s64(neon_boy, neon_boy2);
-		i++;
+		neon_boy = vadd_f32(neon_boy, neon_boy2);
+		j++;
 
 	}
 
