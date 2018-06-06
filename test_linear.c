@@ -124,7 +124,7 @@ int main(){
 
 	while (j <= trials){
 
-		neon_boy = vadd_f32(neon_boy, neon_boy2);
+		neon_boy = vaddq_f32(neon_boy, neon_boy2);
 		j++;
 
 	}
