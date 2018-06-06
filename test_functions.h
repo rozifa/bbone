@@ -29,8 +29,8 @@ void print_vector(fVector vector){
 }
 
 void print_assess(double time1, double time2){
-	double improvement = (time1 - time2)/time1;
-	printf("The efficiency improvement is: %f.\n", improvement);
+	double improvement = abs((time1 - time2)/time1);
+	printf("The efficiency improvement is: %g.\n", improvement);
 }
 //print NEON vector
 
