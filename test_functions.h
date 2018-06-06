@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 //These functions are to be used in test_linear.c to execute the enccassary tests
 
@@ -27,6 +28,10 @@ void print_vector(fVector vector){
 	printf("%f\n", vector.z);
 }
 
+void print_assess(double time1, double time2){
+	double improvement = abs((time1 - time2)/time1);
+	printf("The efficiency improvement is: %f.\n", improvement);
+}
 //print NEON vector
 
 //print NEON matrix
