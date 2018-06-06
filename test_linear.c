@@ -188,9 +188,9 @@ int main(){
 return 0;
 }
 
-
+// Working on this code...
 // --------------------------------------------------------
-	//vmulq_f32() NEON Multiplication.
+/*	//vmulq_f32() NEON Multiplication.
 	fVector v1 = {.x = 37.0, .y = 25.69, .z = 73.0}; //arbitrary 
 	fVector v2 = {.x = 2.0, .y = 15.15, .z = 36.63};
 	fVector v3 = {.x = 93.93, .y = 16.0, .z = 7.0};
@@ -201,21 +201,11 @@ return 0;
 	float32x4_t c1 = fVector_wrapper(v1);
 	float32x4_t c2 = fVector_wrapper(v2);
 	float32x4_t c3 = fVector_wrapper(v3);
-	float32x4_t c_vec = fVector_wrapper(v4); 
+	float32x4_t c_vec = fVector_wrapper(v4);  */
 //---------------------------------------------------------------	
-	vmulq_f32();
 
-	float32x4_t transform (float32x4_t * matrix, float32x4_t vector){
-		float32x4_t result;
 
-  		result = vml (matrix[0], vector);
-  		result = vmla (result, matrix[1], vector);
-  		result = vmla (result, matrix[2], vector);
-  		result = vmla (result, matrix[3], vector);
-
-  		return result;
-	}
-
+/*
 	static __always_inline float32x2_t dotProduct(float32x4x2_t input1, float32x4x2_t input2)
 {
     float32x2_t d0, d1;
@@ -294,3 +284,4 @@ void matMulF_neon(float *pDst, float *pMatA, float *pMatB)
         vst4_lane_f32(pDst++, result, 0);
     } while (--i);
 }
+*/

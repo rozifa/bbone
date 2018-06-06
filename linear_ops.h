@@ -106,6 +106,17 @@ fVector transform(fVector v, Matrix m){
 	return transformed;
 }
 
+float32x4_t transform(float32x4_t * matrix, float32x4_t vector){
+	float32x4_t result;
+
+  	result = vml(matrix[0], vector);
+  	result = vmla(result, matrix[1], vector);
+  	result = vmla(result, matrix[2], vector);
+  	result = vmla(result, matrix[3], vector);
+
+  	return result;
+}
+
 // Transpose a Matrix
 Matrix transpose(Matrix m){
 	Matrix transposed;
