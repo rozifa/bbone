@@ -10,7 +10,7 @@
 // and associated operations to test their speed.
 int main(){
 	//Initalize test vectors
-
+	/*
 	fVector v1 = {.x = 37.0, .y = 25.69, .z = 73.0}; //arbitrary 
 	fVector v2 = {.x = 2.0, .y = 15.15, .z = 36.63};
 	fVector v3 = {.x = 93.93, .y = 16.0, .z = 7.0};
@@ -63,7 +63,7 @@ int main(){
 
 
     fVector vector2 = {};
-    vector2=float32_to_fvector(neon_vector1);
+    vector2=float32_to_fvector(neon_vector1); */
 /*
     clock_t t;
     t = clock();
@@ -108,6 +108,27 @@ int main(){
 	double time_taken = ((double)t)/CLOCKS_PER_SEC;
 	print_vector(test_vector1);
 	printf("STRUCT took %f seconds.\n", time_taken);
+// ------------------------------------------------------ 
+	/*fVector test_boy = {.x = 0.0001, .y = 0.013, .z = 0.0300202};
+	fVector test_boy2 = {.x = 0.00101, .y = 0.000001, .z = 0.00001};
+	float32x4_t neon_boy = fVector_wrapper(test_boy);
+	float32x4_t neon_boy2 = fVector_wrapper(test_boy2);
+	int i = 0;
+	int trials = 1000001;
+	clock_t t2;
+	t2 = clock();
+
+	while (i <= trials){
+
+
+
+	}
+
+	t2 = clock() - t2;
+	double time_taken2 = (((double)t)/CLOCKS_PER_SEC)/trials;
+	print_vector();
+	printf("NEON took %f seconds.\n", time_taken2); */
+
 	
 
 
