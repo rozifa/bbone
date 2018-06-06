@@ -114,8 +114,8 @@ int main(){
 	fVector test_boy = {.x = 0.0001, .y = 0.013, .z = 0.0300202};
 	fVector test_boy2 = {.x = 0.00101, .y = 0.000001, .z = 0.00001};
 	//convert the above
-	//float32x4_t neon_boy = fVector_wrapper(test_boy);
-	//float32x4_t neon_boy2 = fVector_wrapper(test_boy2);
+	float32x4_t neon_boy = fVector_wrapper(test_boy);
+	float32x4_t neon_boy2 = fVector_wrapper(test_boy2);
 	
 	int j = 0;
 	
