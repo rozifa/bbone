@@ -1,3 +1,5 @@
+#include <arm_neon.h>
+
 //Various custom data types and linear algebra operations that can be done with them.
 //Replace vectormath.c with all these bad boys...
 //Data types
@@ -109,10 +111,10 @@ fVector transform(fVector v, Matrix m){
 float32x4_t neon_transform(float32x4_t * matrix, float32x4_t vector){
 	float32x4_t result;
 
-  	result = vml(matrix[0], vector);
-  	result = vmla(result, matrix[1], vector);
-  	result = vmla(result, matrix[2], vector);
-  	result = vmla(result, matrix[3], vector);
+  	result = vmulq_f32(matrix[0], vector); //multiply
+  	result = vmlaq_f32(result, matrix[1], vector); //multiply + accumulate
+  	result = vmlaq_f32(result, matrix[2], vector);
+  	result = vmlaq_f32(result, matrix[3], vector);
 
   	return result;
 }
