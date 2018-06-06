@@ -90,7 +90,7 @@ int main(){
 	double time_taken2 = ((double)t2)/CLOCKS_PER_SEC;
 	printf("STRUCT took %f seconds.\n", time_taken2); 
 */
-
+// ------------ STRUCT ADDING ---------------------------
 	clock_t t;
 	t = clock();
 
@@ -110,7 +110,7 @@ int main(){
 	double time_taken = (((double)t)/CLOCKS_PER_SEC);
 	print_vector(test_vector1);
 	printf("STRUCT took %f seconds.\n", time_taken);
-// ------------------------------------------------------ 
+// -------------- NEON ADDING ------------------------------------- 
 	fVector test_boy = {.x = 0.0001, .y = 0.013, .z = 0.0300202};
 	fVector test_boy2 = {.x = 0.00101, .y = 0.000001, .z = 0.00001};
 	//convert the above
@@ -121,13 +121,12 @@ int main(){
 	
 	clock_t t2;
 	t2 = clock();
-	
+
 	while (j <= trials){
-
 		
-		float32x4_t neon_boy2 = fVector_wrapper(test_boy2);
-
+		float32x4_t neon_boy = fVector_wrapper(test_boy);
 		neon_boy = vaddq_f32(neon_boy, neon_boy2);
+		
 		j++;
 
 	}
@@ -138,10 +137,57 @@ int main(){
 	print_vector(back_boy);
 	printf("NEON took %f seconds.\n", time_taken2); 
 
-	
+//--------------- STRUCT MULTIPLICATION -----------------------
+	fVector test_boy3 = {.x = 0.0001, .y = 0.013, .z = 0.0300202};
+	fVector test_boy4 = {.x = 2.01, .y = 3.44, .z = 5.6324};
 
+	int k = 0;
+
+	clock_t t3;
+	t3 = clock();
+
+	while (k <= 1000001){
+
+		test_boy3 = VMult(test_boy3, test_boy4);
+
+		k++;
+	}
+
+	t3 = clock() - t3;
+	double time_taken3 = (((double)t3)/CLOCKS_PER_SEC);
+	print_vector(test_boy3);
+	printf("STRUCT took %f seconds.\n", time_taken3);
+
+
+
+//----------------- NEON MULTIPLICATION ------------------------
+	fVector test_boy3 = {.x = 0.0001, .y = 0.013, .z = 0.0300202};
+	fVector test_boy4 = {.x = 2.01, .y = 3.44, .z = 5.6324};
+	float32x4_t neon_boy3 = fVector_wrapper(test_boy3);
+	float32x4_t neon_boy4 = fVector_wrapper(test_boy4);
+
+	int l = 0;
+
+	clock_t t4;
+	t4 = clock();
+
+	while (l <= 1000001){
+
+		float32x4_t neon_boy3 = fVector_wrapper(test_boy3);
+		neon_boy3 = vmulq_f32(neon_boy3, neon_boy4);
+
+		l++;
+	}
+
+	t4 = clock() - t4; 
+	double time_taken4 = (((double)t4)/CLOCKS_PER_SEC);
+	fVector back_boy2 = float32_to_fvector(neon_boy3);
+	print_vector(back_boy2);
+	printf("NEON took %f seconds.\n", time_taken4);
 
 return 0;
 }
+
+
 
 //vmulq_f32() NEON Multiplication.
