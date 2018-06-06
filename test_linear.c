@@ -111,28 +111,35 @@ int main(){
 	print_vector(test_vector1);
 	printf("STRUCT took %f seconds.\n", time_taken);
 // ------------------------------------------------------ 
-	/*fVector test_boy = {.x = 0.0001, .y = 0.013, .z = 0.0300202};
+	fVector test_boy = {.x = 0.0001, .y = 0.013, .z = 0.0300202};
 	fVector test_boy2 = {.x = 0.00101, .y = 0.000001, .z = 0.00001};
+	//convert the above
 	float32x4_t neon_boy = fVector_wrapper(test_boy);
 	float32x4_t neon_boy2 = fVector_wrapper(test_boy2);
+	
 	int i = 0;
 	int trials = 1000001;
+	
 	clock_t t2;
 	t2 = clock();
 
 	while (i <= trials){
 
-
+		neon_boy = vadd_s64(neon_boy, neon_boy2);
+		i++;
 
 	}
 
 	t2 = clock() - t2;
 	double time_taken2 = (((double)t)/CLOCKS_PER_SEC);
-	print_vector();
-	printf("NEON took %f seconds.\n", time_taken2); */
+	fVector back_boy = float32_to_fvector(neon_boy);
+	print_vector(back_boy);
+	printf("NEON took %f seconds.\n", time_taken2); 
 
 	
 
 
 return 0;
 }
+
+//vmulq_f32() NEON Multiplication.
