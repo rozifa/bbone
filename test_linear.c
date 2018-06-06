@@ -107,7 +107,7 @@ int main(){
 	t = clock() - t;
 	double time_taken = ((double)t)/CLOCKS_PER_SEC;
 	print_vector(test_vector1);
-	rintf("STRUCT took %f seconds.\n", time_taken);
+	printf("STRUCT took %f seconds.\n", time_taken);
 	
 
 
