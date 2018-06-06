@@ -97,7 +97,9 @@ int main(){
 	fVector test_vector1 = {.x = 0.0001, .y = 0.013, .z = 0.0300202};
 	fVector test_vector2 = {.x = 0.00101, .y = 0.000001, .z = 0.00001};
 	int i = 0;
-	while (i <= 1000001){
+	int trials = 1000001;
+
+	while (i <= trials){
 
 		test_vector1 = VecAdd(test_vector1, test_vector2);
 		i++;
@@ -105,7 +107,7 @@ int main(){
 	}
 
 	t = clock() - t;
-	double time_taken = ((double)t)/CLOCKS_PER_SEC;
+	double time_taken = (((double)t)/CLOCKS_PER_SEC)/trials;
 	print_vector(test_vector1);
 	printf("STRUCT took %f seconds.\n", time_taken);
 // ------------------------------------------------------ 
