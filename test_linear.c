@@ -64,9 +64,10 @@ int main(){
 
     fVector vector2 = {};
     vector2=float32_to_fvector(neon_vector1);
-
+/*
     clock_t t;
     t = clock();
+
     //neon version
     float* v2fl = (float*)(&vector2);
     int i;
@@ -75,16 +76,40 @@ int main(){
 		printf("READ FROM NEON VECTOR:\n");
 		printf("The %d entry is: %f\n", i, neon_vector1[i]);
 	}
+
 	t = clock() - t;
 	double time_taken = ((double)t)/CLOCKS_PER_SEC;
 	printf("NEON took %f seconds.\n", time_taken);
 
 	clock_t t2 = clock();
+
 	//struct version
 	print_vector(vector2);
+	
 	t2 = clock() - t2;
 	double time_taken2 = ((double)t2)/CLOCKS_PER_SEC;
 	printf("STRUCT took %f seconds.\n", time_taken2); 
+*/
+
+	//clock_t t;
+	//t = clock();
+
+	fVector test_vector1 = {.x = 0.0001, .y = 0.013 .z = 0.0300202};
+	fVector test_vector2 = {.x = 0.00101, .y = 0.000001, .z = 0.00001};
+	int i = 0;
+	while (i <= 1000001){
+
+		fVector test_vector1 = VecAdd(test_vector1, test_vector2);
+		i+=;
+
+	}
+
+	print_vector(test_vector1);
+
+
+	//t = clock() - t;
+	//double time_taken = ((double)t)/CLOCKS_PER_SEC;
+
 
 return 0;
 }
