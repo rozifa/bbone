@@ -121,7 +121,7 @@ int main(){
 	
 	clock_t t2;
 	t2 = clock();
-	float32x4_t neon_boy = fVector_wrapper(test_boy); // only need to load this one once?
+	
 	while (j <= trials){
 
 		
