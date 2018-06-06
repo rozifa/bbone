@@ -90,7 +90,7 @@ int main(){
 	double time_taken2 = ((double)t2)/CLOCKS_PER_SEC;
 	printf("STRUCT took %f seconds.\n", time_taken2); 
 */
-/*
+
 	clock_t t;
 	t = clock();
 
@@ -109,7 +109,7 @@ int main(){
 	t = clock() - t;
 	double time_taken = (((double)t)/CLOCKS_PER_SEC);
 	print_vector(test_vector1);
-	printf("STRUCT took %f seconds.\n", time_taken); */
+	printf("STRUCT took %f seconds.\n", time_taken);
 // ------------------------------------------------------ 
 	fVector test_boy = {.x = 0.0001, .y = 0.013, .z = 0.0300202};
 	fVector test_boy2 = {.x = 0.00101, .y = 0.000001, .z = 0.00001};
@@ -130,7 +130,7 @@ int main(){
 	}
 
 	t2 = clock() - t2;
-	double time_taken2 = (((double)t)/CLOCKS_PER_SEC);
+	double time_taken2 = (((double)t2)/CLOCKS_PER_SEC);
 	fVector back_boy = float32_to_fvector(neon_boy);
 	print_vector(back_boy);
 	printf("NEON took %f seconds.\n", time_taken2); 
