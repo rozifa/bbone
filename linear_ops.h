@@ -28,7 +28,7 @@ typedef struct _sMatrix{
 } sMatrix;
 
 //Just for a test... this needs to be changed / removed...
-/*typedef struct _lVector{
+typedef struct _lVector{
 	float a;
 	float b;
 	float c;
@@ -43,7 +43,7 @@ typedef struct _sMatrix{
 	float h;
 	float i;
 	float z;
-} lVector; */
+} lVector; 
 
 //My Operation Implementations:
 
