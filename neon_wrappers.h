@@ -3,50 +3,50 @@
 //#include "vector.h" only if we change the definition 
 // I don't even know if this is at all useful...
 
-//Vector (this is already in linear_ops.h actually...)
-/*
-typedef struct _fVector {
-		float x;
-		float y;
-		float z; 
-		float w;
-	} fVector;
-	*/
-/*
-//Matrix
-typedef struct _Matrix{
-	fVector a;
-	fVector b;
-	fVector c;
-} Matrix;
-*/
-//Need these to manage matrices as well...
 //Wrapper function: fVector --> NEON Vector
 float32x4_t fVector_wrapper(fVector vector){
 	float32x4_t neon_vec = vld1q_f32((float*)(&vector)); // ARM Neon Intrinsic to load a vect.
 	return neon_vec;
 }
 
-float32x4_t Matrix_wrapper(Matrix matrix){
+//fMatrix --> NEON Array
+float32x4x4_t Matrix_wrapper(Matrix matrix){
 	//this may not work
-	float32x4_t neon_matrix = vld1q_f32((float*)(&matrix));
+	float neon_matrix[4][4];
+
+	float32x4_t c1 = vld1q_f32((float*)(&matrix.a));
+	float32x4_t c2 = vld1q_f32((float*)(&matrix.b));
+	float32x4_t c3 = vld1q_f32((float*)(&matrix.c));
+
+	float32x4x4_t mat = {c1, c2, c3};
+
+	float col1[4];
+	float col2[4];
+	float col3[4];
+	float col4[4];
+
+	vst4q_lane_f32(col1, mat, 0);
+	vst4q_lane_f32(col2, mat, 1);
+	vst4q_lane_f32(col3, mat, 2);
+	vst4q_lane_f32(col4, mat, 3);
 
 	return neon_matrix;
 }
-
+/*
 //Inverse wrapper: NEON --> fVector
 fVector float32_to_fvector(float32x4_t f32){
     fVector result = {};
     float* retfl = (float*)(&result);
-
-    retfl[0] = vgetq_lane_f32(f32, 0);
-    retfl[1] = vgetq_lane_f32(f32, 1);
-    retfl[2] = vgetq_lane_f32(f32, 2);
+    // somehting like vget..(.., 6) makes no sense.
+    retfl[0] = vgetq_lane_f32(f32, 0); //there are only
+    retfl[1] = vgetq_lane_f32(f32, 1); //four lanes per
+    retfl[2] = vgetq_lane_f32(f32, 2); //f32 vector....
     retfl[3] = vgetq_lane_f32(f32, 3);
 
     return result;
-}
-
+} */
+/*
+//Neon Matrix --> Long Vector (testing)
 lVector float32_to_lVector(float32x4_t f32){
 	lVector result = {};
     float* retfl = (float*)(&result);
@@ -57,7 +57,7 @@ lVector float32_to_lVector(float32x4_t f32){
 	}
 
 	return result;
-}
+} */
 
 
 //Matrix wrapper - fix later

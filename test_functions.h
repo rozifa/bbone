@@ -28,11 +28,11 @@ void print_vector(fVector vector){
 	printf("%f\n", vector.z);
 }
 
-void print_lVector(lVector vector){
+/*void print_lVector(lVector vector){
 	printf("%f %f %f\n", vector.a, vector.d, vector.g);
 	printf("%f %f %f\n", vector.b, vector.e, vector.h);
 	printf("%f %f %f\n", vector.c, vector.f, vector.i);
-}
+} */
 /*
 void print_lVector(lVector vector){
 	printf("%f\n", vector.a);
