@@ -191,11 +191,17 @@ int main(){
 
 //---------------------- STRUCT MATRIX BY VECT (TRANS.) --------------
 
+//----------Test -----
+
+	Matrix mat_boy = {.a = v1, .b = v2, .c = v3};
+	float32x4_t neon_mat_boy = fMatrix_wrapper(mat_boy);
+	lVector back_boy4 = float32_to_lVector(neon_mat_boy);
+	print_lVector(back_boy4);
 
 
 
 //----------------------- NEON MATRIX BY VECT (TRANS.) ---------------
-
+/*
 	Matrix mat_boy = {.a = v1, .b = v2, .c = v3};
 	fVector test_boy7 = {.x = 0.0031, .y = 0.0044, .z = 0.0010304};
 	float32x4_t neon_mat_boy = //fMatrix_wrapper(mat_boy)...;
@@ -207,7 +213,7 @@ int main(){
 	t6 = clock();
 
 	while (d <= trials){
-
+		//neon mat boy not yet defined...
 		float32x4_t trans_boy = neon_transform(neon_mat_boy, neon_test_boy7);
 
 		d++;
@@ -219,7 +225,7 @@ int main(){
 	print_vector(backboy_3);
 	printf("NEON Trans. took %f seconds. \n", time_taken5);
 
-	print_assess()
+	print_assess() */
 
 return 0;
 }
