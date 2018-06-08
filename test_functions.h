@@ -29,9 +29,9 @@ void print_vector(fVector vector){
 }
 
 void print_lVector(lVector vector){
-	printf("%f %f %f\n", vector.a, matrix.d, matrix.g);
-	printf("%f %f %f\n", matrix.b, matrix.e, matrix.h);
-	printf("%f %f %f\n", matrix.c, matrix.f, matrix.i);
+	printf("%f %f %f\n", vector.a, vector.d, vector.g);
+	printf("%f %f %f\n", vector.b, vector.e, vector.h);
+	printf("%f %f %f\n", vector.c, vector.f, vector.i);
 }
 /*
 void print_lVector(lVector vector){
