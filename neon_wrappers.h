@@ -54,14 +54,17 @@ lVector float32_to_lVector(float32x4_t f32){
 	retfl[0] = vgetq_lane_f32(f32, 0);
 	retfl[1] = vgetq_lane_f32(f32, 1);
 	retfl[2] = vgetq_lane_f32(f32, 2);
-
 	retfl[3] = vgetq_lane_f32(f32, 3);
+	
 	retfl[4] = vgetq_lane_f32(f32, 4);
 	retfl[5] = vgetq_lane_f32(f32, 5);
-
 	retfl[6] = vgetq_lane_f32(f32, 6);
 	retfl[7] = vgetq_lane_f32(f32, 7);
+	
 	retfl[8] = vgetq_lane_f32(f32, 8);
+	retfl[9] = vgetq_lane_f32(f32, 9);
+	retfl[10] = vgetq_lane_f32(f32, 10);
+	retfl[11] = vgetq_lane_f32(f32, 11);
 
 	return result;
 }
