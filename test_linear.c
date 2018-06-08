@@ -198,10 +198,10 @@ int main(){
 	Matrix mat_boy = {.a = v1, .b = v2, .c = v3};
 	float32x4_t neon_mat_boy = Matrix_wrapper(mat_boy);
 
-	int p = 0;
-	for (p; p<= 8; p++){
-		printf("%f. \n", neon_mat_boy[i]);
-	}
+	//int p = 0;
+	//for (p; p<= 8; p++){
+	//	printf("%f. \n", neon_mat_boy[i]);
+	//}
 	//lVector back_boy4 = float32_to_lVector(neon_mat_boy);
 	//print_lVector(back_boy4);
 
