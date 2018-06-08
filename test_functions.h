@@ -27,7 +27,7 @@ void print_vector(fVector vector){
 	printf("%f\n", vector.y);
 	printf("%f\n", vector.z);
 }
-
+/*
 void print_lVector(lVector vector){
 	printf("%f\n", vector.a);
 	printf("%f\n", vector.b);
@@ -40,7 +40,7 @@ void print_lVector(lVector vector){
 	printf("%f\n", vector.g);
 	printf("%f\n", vector.h);
 	printf("%f\n", vector.i);
-}
+} */
 
 void print_assess(double time1, double time2){
 	double improvement = (time1 - time2);
