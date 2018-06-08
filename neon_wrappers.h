@@ -48,11 +48,12 @@ fVector float32_to_fvector(float32x4_t f32){
 }
 
 float float32_to_array(float32x4_t f32){
-	float* result[9];
-	int i = 0;
+	float result[9];
+    float* retfl = (float*)(&result);
 
+    int i = 0;
 	for (i; i<= 8; i++){
-		result[i] = vgetq_lane_f32(f32, i);
+		retfl[i] = vgetq_lane_f32(f32, i);
 	}
 
 	return result;
