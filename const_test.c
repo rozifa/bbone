@@ -4,8 +4,8 @@
 
 int main(){
 
-	int a = 4;
-	int b = a;
+	static int a = 4;
+	static int b = a;
 	printf("%d\n", a);
 	printf("%d\n", b);
 
