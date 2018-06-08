@@ -27,6 +27,12 @@ void print_vector(fVector vector){
 	printf("%f\n", vector.y);
 	printf("%f\n", vector.z);
 }
+
+void print_lVector(lVector vector){
+	printf("%f %f %f\n", vector.a, matrix.d, matrix.g);
+	printf("%f %f %f\n", matrix.b, matrix.e, matrix.h);
+	printf("%f %f %f\n", matrix.c, matrix.f, matrix.i);
+}
 /*
 void print_lVector(lVector vector){
 	printf("%f\n", vector.a);

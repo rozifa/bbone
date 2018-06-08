@@ -197,12 +197,9 @@ int main(){
 	fVector v3 = {.x = 93.93, .y = 16.0, .z = 7.0};
 	Matrix mat_boy = {.a = v1, .b = v2, .c = v3};
 	float32x4_t neon_mat_boy = Matrix_wrapper(mat_boy);
-	lVector float_mat_boy = float32_to_lVector(neon_mat_boy);
+	lVector struct_mat_boy = float32_to_lVector(neon_mat_boy);
 
-	int p = 0;
-	for (p; p<= 8; p++){
-		printf("%f. \n", float_mat_boy[i]);
-	}
+	print_lVector(struct_mat_boy);
 	
 	//lVector back_boy4 = float32_to_lVector(neon_mat_boy);
 	//print_lVector(back_boy4);
