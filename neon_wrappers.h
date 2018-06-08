@@ -43,13 +43,14 @@ fVector float32_to_fvector(float32x4_t f32){
     retfl[1] = vgetq_lane_f32(f32, 1);
     retfl[2] = vgetq_lane_f32(f32, 2);
     retfl[3] = vgetq_lane_f32(f32, 3);
-    
+
     return result;
 }
 //for testing... maybe remove / change later
-lvector float32_to_lVector(float32x4_t f32){
+lVector float32_to_lVector(float32x4_t f32){
 	lVector result = {};
 	float* retfl = (float*)(&result);
+
 	retfl[0] = vgetq_lane_f32(f32, 0);
 	retfl[1] = vgetq_lane_f32(f32, 1);
 	retfl[2] = vgetq_lane_f32(f32, 2);

@@ -192,9 +192,11 @@ int main(){
 //---------------------- STRUCT MATRIX BY VECT (TRANS.) --------------
 
 //----------Test -----
-
+	fVector v1 = {.x = 37.0, .y = 25.69, .z = 73.0}; //arbitrary 
+	fVector v2 = {.x = 2.0, .y = 15.15, .z = 36.63};
+	fVector v3 = {.x = 93.93, .y = 16.0, .z = 7.0};
 	Matrix mat_boy = {.a = v1, .b = v2, .c = v3};
-	float32x4_t neon_mat_boy = fMatrix_wrapper(mat_boy);
+	float32x4_t neon_mat_boy = Matrix_wrapper(mat_boy);
 	lVector back_boy4 = float32_to_lVector(neon_mat_boy);
 	print_lVector(back_boy4);
 
