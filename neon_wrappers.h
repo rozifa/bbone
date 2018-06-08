@@ -28,7 +28,7 @@ float32x4_t fVector_wrapper(fVector vector){
 }
 
 float32x4_t Matrix_wrapper(Matrix matrix){
-
+	//this may not work
 	float32x4_t neon_matrix = vld1q_f32((float*)(&matrix));
 
 	return neon_matrix;
@@ -47,27 +47,9 @@ fVector float32_to_fvector(float32x4_t f32){
     return result;
 }
 //for testing... maybe remove / change later
-lVector float32_to_lVector(float32x4_t f32){
-	lVector result = {};
-	float* retfl = (float*)(&result);
-
-	retfl[0] = vgetq_lane_f32(f32, 0);
-	retfl[1] = vgetq_lane_f32(f32, 1);
-	retfl[2] = vgetq_lane_f32(f32, 2);
-	retfl[3] = vgetq_lane_f32(f32, 3);
-	
-	retfl[4] = vgetq_lane_f32(f32, 4);
-	retfl[5] = vgetq_lane_f32(f32, 5);
-	retfl[6] = vgetq_lane_f32(f32, 6);
-	retfl[7] = vgetq_lane_f32(f32, 7);
-	
-	retfl[8] = vgetq_lane_f32(f32, 8);
-	retfl[9] = vgetq_lane_f32(f32, 9);
-	retfl[10] = vgetq_lane_f32(f32, 10);
-	retfl[11] = vgetq_lane_f32(f32, 11);
-
-	return result;
-}
+//lVector float32_to_lVector(float32x4_t f32){
+	//code goe shere
+//}
 
 
 
