@@ -47,8 +47,8 @@ fVector float32_to_fvector(float32x4_t f32){
     return result;
 }
 
-float float32_to_array(float32x4_t f32){
-	void result[9];
+lVector float32_to_array(float32x4_t f32){
+	lVector result = {};
     float* retfl = (float*)(&result);
 
     int i = 0;
