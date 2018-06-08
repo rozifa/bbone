@@ -28,9 +28,8 @@ float32x4_t fVector_wrapper(fVector vector){
 }
 
 float32x4_t Matrix_wrapper(Matrix matrix){
-	float32x4_t neon_matrix = ;
 
-	//code goes here...
+	float32x4_t neon_matrix = vld1q_f32((float*)(&matrix));
 
 	return neon_matrix;
 }
@@ -39,12 +38,34 @@ float32x4_t Matrix_wrapper(Matrix matrix){
 fVector float32_to_fvector(float32x4_t f32){
     fVector result = {};
     float* retfl = (float*)(&result);
+
     retfl[0] = vgetq_lane_f32(f32, 0);
     retfl[1] = vgetq_lane_f32(f32, 1);
     retfl[2] = vgetq_lane_f32(f32, 2);
     retfl[3] = vgetq_lane_f32(f32, 3);
+    
     return result;
 }
+//for testing... maybe remove / change later
+lvector float32_to_lVector(float32x4_t f32){
+	lVector result = {};
+	float* retfl = (float*)(&result);
+	retfl[0] = vgetq_lane_f32(f32, 0);
+	retfl[1] = vgetq_lane_f32(f32, 1);
+	retfl[2] = vgetq_lane_f32(f32, 2);
+
+	retfl[3] = vgetq_lane_f32(f32, 3);
+	retfl[4] = vgetq_lane_f32(f32, 4);
+	retfl[5] = vgetq_lane_f32(f32, 5);
+
+	retfl[6] = vgetq_lane_f32(f32, 6);
+	retfl[7] = vgetq_lane_f32(f32, 7);
+	retfl[8] = vgetq_lane_f32(f32, 8);
+
+	return result;
+}
+
+
 
 //Matrix wrapper - fix later
 /*

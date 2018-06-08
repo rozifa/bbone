@@ -27,6 +27,21 @@ typedef struct _sMatrix{
 	sVector b;
 } sMatrix;
 
+//Just for a test... this needs to be changed / removed...
+typedef struct _lVector{
+	float a;
+	float b;
+	float c;
+
+	float d;
+	float e;
+	float f;
+
+	float g;
+	float h;
+	float i;
+} lVector;
+
 //My Operation Implementations:
 
 // Elementwise Addition of Vectors
