@@ -70,6 +70,7 @@ lVector float32x4x4_to_lVector(float32x4x4_t f32x4){
 		retfl[i] = vgetq_lane_f32(v3, i - 8);
 	}
 
+	return result;
 }
 
 
