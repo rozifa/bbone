@@ -32,14 +32,17 @@ typedef struct _lVector{
 	float a;
 	float b;
 	float c;
+	float x;
 
 	float d;
 	float e;
 	float f;
+	float y;
 
 	float g;
 	float h;
 	float i;
+	float z;
 } lVector; 
 
 //My Operation Implementations:
