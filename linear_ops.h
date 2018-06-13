@@ -227,45 +227,78 @@ float* fVecTOarray(fVector vector){
 	return converted;
 }
 
-// This needs to be converted to C intrinsics or directly implemented via the assembly code
-// Arm Neon Assembly - Matrix by vector
+//------------ Assembly --------------------------------
+
+asm volatile (
+
+	// This needs to be converted to C intrinsics or directly implemented via the assembly code
+	// Arm Neon Assembly - Matrix by vector
+	// do this as inline assembly in the C code?
 	// Load both matrices into NEON registers
-	vld1.32		{d16-d19}, {r1}! // Matrix 1
-	vld1.32		{d20-d23}, [r1]!
-	vld1.32 	{d0-d3}, [r2]! //Matrix 2
-	vld1.32 	{d4-d7}, {r2}! 
+	"vld1.32	{d16-d19}, {r1}! \n" // Matrix 1
+	"vld1.32	{d20-d23}, [r1]! \n"
+	"vld1.32 	{d0-d3}, [r2]! \n" //Matrix 2
+	"vld1.32 	{d4-d7}, {r2}! \n" 
 
 	//One Column of results
-	vmul.f32	q12, q8, d0[0]
-	vmla.f32 	q12, q9, d0[1]
-	vmla.f32 	q12, q10, d1[0]
-	vmla.f32 	q12, q11, d1[1]
+	"vmul.f32	q12, q8, d0[0] \n"
+	"vmla.f32 	q12, q9, d0[1] \n"
+	"vmla.f32 	q12, q10, d1[0] \n"
+	"vmla.f32 	q12, q11, d1[1] \n"
 
 	//macro
-	.macro mul_col_f32 res_q, col0_d, col1_d
-	vmul.f32 \res_q, q8, \col0_d[0]
-	vmla.f32 \res_q, q9, \col0_d[1]
-	vmla.f32 \res_q, q10, \col1_d[0]
-	vmla.f32 \res_q, q11, \col1_d[1]
+	".macro mul_col_f32 res_q, col0_d, col1_d \n"
+	"vmul.f32 \res_q, q8, \col0_d[0] \n"
+	"vmla.f32 \res_q, q9, \col0_d[1] \n"
+	"vmla.f32 \res_q, q10, \col1_d[0] \n"
+	"vmla.f32 \res_q, q11, \col1_d[1] \n"
 
 
 	//implement matrix by matrix using our macros (less code)
 
 	//load elements
-	vld1.32		{d16-d19}, {r1}! // Matrix 1
-	vld1.32		{d20-d23}, [r1]!
-	vld1.32 	{d0-d3}, [r2]! //Matrix 2
-	vld1.32 	{d4-d7}, {r2}! 
+	"vld1.32	{d16-d19}, {r1}! \n" // Matrix 1
+	"vld1.32	{d20-d23}, [r1]! \n"
+	"vld1.32 	{d0-d3}, [r2]! \n" //Matrix 2
+	"vld1.32 	{d4-d7}, {r2}! \n" 
 
 	//multiplication via macro
-	mul_col_f32 q12, d0, d1
-	mul_col_f32 q13, d2, d3
-	mul_col_f32 q14, d4, d5
-	mul_col_f32 q15, d6, d7
+	"mul_col_f32 q12, d0, d1 \n"
+	"mul_col_f32 q13, d2, d3 \n"
+	"mul_col_f32 q14, d4, d5 \n"
+	"mul_col_f32 q15, d6, d7 \n"
 
 	//store results
-	vst1.32 	{d24-d27}, {r0}!
-	vst1.32 	{d28-d31}, {r0}!
+	"vst1.32 	{d24-d27}, {r0}! \n"
+	"vst1.32 	{d28-d31}, {r0}! \n"
+
+	)
+
+
+//Cross Product Using C-Intrinsics - a X b
+
+void cross_prod(float32_t *r, float32_t* a, float32_t* b){
+	
+	//Load vector elements into NEON registers
+	float32x2_t vec_a_1 = vld1_f32(a + 1);
+	float32x2_t vec_a_2 = vld1_f32(a);
+	float32x2_t vec_a_1 = vld1_f32(b + 1);
+	float32x2_t vec_a_2 = vld1_f32(b);
+
+	//Transformations for the calculations
+	float32x4_t vec_a = vcombine_f32(vec_a_1, vec_a_2);
+	float32x4_t vec_b = vcombine_f32(vec_b_1, vec_b_2);
+	float32x4_t vec_a_rot = vextq_f32(vec_a, vec_a, 1);
+	float32x4_t vec_b_rot = vextq_f32(vec_b, vec_b, 1);
+
+	//Perform the calculation
+	float32x4_t prod = vmulq_f32(vec_a, vec_b_rot);
+	prod = vmlsq_f32(prod, vec_a_rot, vec_b);
+
+	//Store the results
+	vst1_f32(r, vget_low_f32(prod));
+	vst1_lane_f32(r + 2, vget_high_f32(prod), 0);
+}
 
 /*
 // This is all wrong...
