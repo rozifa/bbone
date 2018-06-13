@@ -18,9 +18,9 @@ float32x4x4_t Matrix_wrapper(Matrix matrix){
 
 	float32x4x4_t neon_mat = {c1, c2, c3};
 
-	vst4q_lane_f32(c1, mat, 0);
-	vst4q_lane_f32(c2, mat, 1);
-	vst4q_lane_f32(c3, mat, 2);
+	vst4q_lane_f32(c1, neon_mat, 0);
+	vst4q_lane_f32(c2, neon_mat, 1);
+	vst4q_lane_f32(c3, neon_mat, 2);
 
 	return neon_mat;
 }
