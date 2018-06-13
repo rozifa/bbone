@@ -34,6 +34,33 @@ fVector float32_to_fvector(float32x4_t f32){
 
     return result;
 }
+
+
+lVector float32x4x4_to_lVector(float32x4x4_t f32x4){
+	lVector result = {};
+	float* retfl = (float*)(&result);
+
+	const float32x4_t v1 = f32x4.val[0]; 
+	const float32x4_t v2 = f32x4.val[1];
+	const float32x4_t v3 = f32x4.val[2];
+
+	retfl[0] = vgetq_lane_f32(v1, 0); //these have to be explicitly assigned
+	retfl[1] = vgetq_lane_f32(v1, 1);
+	retfl[2] = vgetq_lane_f32(v1, 2);
+	retfl[3] = vgetq_lane_f32(v1, 3);
+
+	retfl[4] = vgetq_lane_f32(v2, 0);
+	retfl[5] = vgetq_lane_f32(v2, 1);
+	retfl[6] = vgetq_lane_f32(v2, 2);
+	retfl[7] = vgetq_lane_f32(v2, 3);
+
+	retfl[8] = vgetq_lane_f32(v3, 0);
+	retfl[9] = vgetq_lane_f32(v3, 1);
+	retfl[10] = vgetq_lane_f32(v3, 2);
+	retfl[11] = vgetq_lane_f32(v3, 3);
+
+	return result;
+}
 /*
 //Neon Matrix --> Long Vector (testing)
 lVector float32_to_lVector(float32x4x4_t f32){
@@ -48,31 +75,10 @@ lVector float32_to_lVector(float32x4x4_t f32){
 	return result;
 } */
 
-lVector float32x4x4_to_lVector(float32x4x4_t f32x4){
-	lVector result = {};
-	float* retfl = (float*)(&result);
 
-	const float32x4_t v1 = f32x4.val[0]; 
-	const float32x4_t v2 = f32x4.val[1];
-	const float32x4_t v3 = f32x4.val[2];
 
-	int i = 0;
 
-	for (i; i <= 3; i++){
-		retfl[i] = vgetq_lane_f32(v1, (const int) i);
-	}
-
-	for (i; i <= 7; i++){
-		retfl[i] = vgetq_lane_f32(v2, (const int) i - 4);
-	}
-
-	for (i; i <= 11; i++){
-		retfl[i] = vgetq_lane_f32(v3, (const int) i - 8);
-	}
-
-	return result;
-}
-
+//-------------------- reference trash -------------------
 
 //Matrix wrapper - fix later
 /*

@@ -101,7 +101,7 @@ BookA.subject = "Fiction"
 
 // Pointers
 int var1;
-printf("The memory address for var1 is: %x\n", &var1) // access mem ad with &
+printf("The meme address for var1 is: %x\n", &var1) // access mem ad with &
 
 type *pointer-name;
 int var = 20

@@ -232,6 +232,9 @@ int main(){
 return 0;
 }
 
+
+
+//-----------------Test Trash ----------------------
 // Working on this code...
 // --------------------------------------------------------
 /*	//vmulq_f32() NEON Multiplication.

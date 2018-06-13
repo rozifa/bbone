@@ -27,6 +27,7 @@ typedef struct _sMatrix{
 	sVector b;
 } sMatrix;
 
+//like a matrix...can convert back and forth 
 //Just for a test... this needs to be changed / removed...
 typedef struct _lVector{
 	float a;
@@ -226,6 +227,45 @@ float* fVecTOarray(fVector vector){
 	return converted;
 }
 
+// This needs to be converted to C intrinsics or directly implemented via the assembly code
+// Arm Neon Assembly - Matrix by vector
+	// Load both matrices into NEON registers
+	vld1.32		{d16-d19}, {r1}! // Matrix 1
+	vld1.32		{d20-d23}, [r1]!
+	vld1.32 	{d0-d3}, [r2]! //Matrix 2
+	vld1.32 	{d4-d7}, {r2}! 
+
+	//One Column of results
+	vmul.f32	q12, q8, d0[0]
+	vmla.f32 	q12, q9, d0[1]
+	vmla.f32 	q12, q10, d1[0]
+	vmla.f32 	q12, q11, d1[1]
+
+	//macro
+	.macro mul_col_f32 res_q, col0_d, col1_d
+	vmul.f32 \res_q, q8, \col0_d[0]
+	vmla.f32 \res_q, q9, \col0_d[1]
+	vmla.f32 \res_q, q10, \col1_d[0]
+	vmla.f32 \res_q, q11, \col1_d[1]
+
+
+	//implement matrix by matrix using our macros (less code)
+
+	//load elements
+	vld1.32		{d16-d19}, {r1}! // Matrix 1
+	vld1.32		{d20-d23}, [r1]!
+	vld1.32 	{d0-d3}, [r2]! //Matrix 2
+	vld1.32 	{d4-d7}, {r2}! 
+
+	//multiplication via macro
+	mul_col_f32 q12, d0, d1
+	mul_col_f32 q13, d2, d3
+	mul_col_f32 q14, d4, d5
+	mul_col_f32 q15, d6, d7
+
+	//store results
+	vst1.32 	{d24-d27}, {r0}!
+	vst1.32 	{d28-d31}, {r0}!
 
 /*
 // This is all wrong...
