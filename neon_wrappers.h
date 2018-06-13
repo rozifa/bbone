@@ -36,7 +36,7 @@ fVector float32_to_fvector(float32x4_t f32){
 }
 
 //Neon Matrix --> Long Vector (testing)
-lVector float32_to_lVector(float32x4_t f32){
+lVector float32_to_lVector(float32x4x4_t f32){
 	lVector result = {};
     float* retfl = (float*)(&result);
 
