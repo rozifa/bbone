@@ -52,22 +52,22 @@ lVector float32x4x4_to_lVector(float32x4x4_t f32x4){
 	lVector result = {};
 	float* retfl = (float*)(&result);
 
-	float32x4_t v1 = f32x4.val[0]; 
-	float32x4_t v2 = f32x4.val[1];
-	float32x4_t v3 = f32x4.val[2];
+	const float32x4_t v1 = f32x4.val[0]; 
+	const float32x4_t v2 = f32x4.val[1];
+	const float32x4_t v3 = f32x4.val[2];
 
 	int i = 0;
 
 	for (i; i <= 3; i++){
-		retfl[i] = vgetq_lane_f32(v1, i);
+		retfl[i] = vgetq_lane_f32(v1, (const int) i);
 	}
 
 	for (i; i <= 7; i++){
-		retfl[i] = vgetq_lane_f32(v2, i - 4);
+		retfl[i] = vgetq_lane_f32(v2, (const int) i - 4);
 	}
 
 	for (i; i <= 11; i++){
-		retfl[i] = vgetq_lane_f32(v3, i - 8);
+		retfl[i] = vgetq_lane_f32(v3, (const int) i - 8);
 	}
 
 	return result;
