@@ -190,25 +190,24 @@ int main(){
 	print_assess(time_taken3, time_taken4);
 
 //---------------------- STRUCT MATRIX BY VECT (TRANS.) --------------
-
+/*
 //----------Test -----
 	fVector v1 = {.x = 37.0, .y = 25.69, .z = 73.0}; //arbitrary 
 	fVector v2 = {.x = 2.0, .y = 15.15, .z = 36.63};
 	fVector v3 = {.x = 93.93, .y = 16.0, .z = 7.0};
 	Matrix mat_boy = {.a = v1, .b = v2, .c = v3};
 	float32x4_t neon_mat_boy = Matrix_wrapper(mat_boy);
-	lVector struct_mat_boy = float32_to_lVector(neon_mat_boy);
+	struct_mat_boy = float32_to_lVector(neon_mat_boy);
 
-	print_lVector(struct_mat_boy);
-	
+		
 	//lVector back_boy4 = float32_to_lVector(neon_mat_boy);
 	//print_lVector(back_boy4);
 
-
+*/
 
 //----------------------- NEON MATRIX BY VECT (TRANS.) ---------------
 /*
-	Matrix mat_boy = {.a = v1, .b = v2, .c = v3};
+	Matrix mat_boy =  {.a = v1, .b = v2, .c = v3};
 	fVector test_boy7 = {.x = 0.0031, .y = 0.0044, .z = 0.0010304};
 	float32x4_t neon_mat_boy = //fMatrix_wrapper(mat_boy)...;
 	float32x4_t neon_test_boy = fVector_wrapper(test_boy7);
