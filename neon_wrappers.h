@@ -34,7 +34,7 @@ fVector float32_to_fvector(float32x4_t f32){
 
     return result;
 }
-/*
+
 //Neon Matrix --> Long Vector (testing)
 lVector float32_to_lVector(float32x4_t f32){
 	lVector result = {};
@@ -46,7 +46,7 @@ lVector float32_to_lVector(float32x4_t f32){
 	}
 
 	return result;
-} */
+} 
 
 
 //Matrix wrapper - fix later
