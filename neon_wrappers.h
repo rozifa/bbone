@@ -52,9 +52,9 @@ lVector float32x4x4_to_lVector(float32x4x4_t f32x4){
 	lVector result = {};
 	float* retfl = (float*)(&result);
 
-	float32x4_t v1 = f32x4[0]; 
-	float32x4_t v2 = f32x4[1];
-	float32x4_t v3 = f32x4[2];
+	float32x4_t v1 = f32x4.val[0]; 
+	float32x4_t v2 = f32x4.val[1];
+	float32x4_t v3 = f32x4.val[2];
 
 	int i = 0;
 
