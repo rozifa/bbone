@@ -12,17 +12,22 @@ float32x4_t fVector_wrapper(fVector vector){
 //fMatrix --> NEON Array
 float32x4x4_t Matrix_wrapper(Matrix matrix){
 	//this may not work
-	float32x4_t* c1 = vld1q_f32((float*)(&matrix.a));
-	float32x4_t* c2 = vld1q_f32((float*)(&matrix.b));
-	float32x4_t* c3 = vld1q_f32((float*)(&matrix.c));
+	float neon_matrix[3][3];
+	float32x4_t c1 = vld1q_f32((float*)(&matrix.a));
+	float32x4_t c2 = vld1q_f32((float*)(&matrix.b));
+	float32x4_t c3 = vld1q_f32((float*)(&matrix.c));
 
-	float32x4x4_t neon_mat = {c1, c2, c3};
+	neon_matrix[1] = c1;
+	neon_matrix[2] = c2;
+	neon_matrix[3] = c3;
 
-	vst4q_lane_f32(c1, neon_mat, 0);
-	vst4q_lane_f32(c2, neon_mat, 1);
-	vst4q_lane_f32(c3, neon_mat, 2);
+	//float32x4x4_t neon_mat = {c1, c2, c3};
 
-	return neon_mat;
+	// vst4q_lane_f32(c1, neon_mat, 0);
+	// vst4q_lane_f32(c2, neon_mat, 1);
+	// vst4q_lane_f32(c3, neon_mat, 2);
+
+	return neon_matrix;
 }
 /*
 //Inverse wrapper: NEON --> fVector
