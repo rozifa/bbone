@@ -199,7 +199,7 @@ int main(){
 	float32x4x4_t neon_mat_boy = Matrix_wrapper(mat_boy);
 	lVector struct_mat_boy = float32x4x4_to_lVector(neon_mat_boy);
 
-	lVector back_boy4 = float32_to_lVector(neon_mat_boy);
+	lVector back_boy4 = float32x4x4_to_lVector(neon_mat_boy);
 	print_lVector(back_boy4);
 
 //----------------------- NEON MATRIX BY VECT (TRANS.) ---------------
