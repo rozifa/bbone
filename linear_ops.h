@@ -228,7 +228,8 @@ float* fVecTOarray(fVector vector){
 }
 
 //------------ Assembly --------------------------------
-
+// We can move these NEON operations to a seperate file from the struct operations perhaps
+/*
 asm volatile (
 
 	// This needs to be converted to C intrinsics or directly implemented via the assembly code
@@ -273,72 +274,36 @@ asm volatile (
 	"vst1.32 	{d28-d31}, {r0}! \n"
 
 	)
-
-
-//Cross Product Using C-Intrinsics - a X b
-
+*/
+//Cross Product Using C-Intrinsics - a X b - store in r
 void cross_prod(float32_t *r, float32_t* a, float32_t* b){
 	
 	//Load vector elements into NEON registers
-	float32x2_t vec_a_1 = vld1_f32(a + 1);
-	float32x2_t vec_a_2 = vld1_f32(a);
-	float32x2_t vec_a_1 = vld1_f32(b + 1);
-	float32x2_t vec_a_2 = vld1_f32(b);
+	float32x2_t vector_a_1 = vld1_f32(a + 1);
+	float32x2_t vector_a_2 = vld1_f32(a);
+	float32x2_t vector_b_1 = vld1_f32(b + 1);
+	float32x2_t vector_b_2 = vld1_f32(b);
 
 	//Transformations for the calculations
-	float32x4_t vec_a = vcombine_f32(vec_a_1, vec_a_2);
-	float32x4_t vec_b = vcombine_f32(vec_b_1, vec_b_2);
-	float32x4_t vec_a_rot = vextq_f32(vec_a, vec_a, 1);
-	float32x4_t vec_b_rot = vextq_f32(vec_b, vec_b, 1);
+	float32x4_t vector_a = vcombine_f32(vector_a_1, vector_a_2);
+	float32x4_t vector_b = vcombine_f32(vector_b_1, vector_b_2);
+	float32x4_t vector_a_rot = vextq_f32(vector_a, vector_a, 1);
+	float32x4_t vector_b_rot = vextq_f32(vector_b, vector_b, 1);
 
 	//Perform the calculation
-	float32x4_t prod = vmulq_f32(vec_a, vec_b_rot);
-	prod = vmlsq_f32(prod, vec_a_rot, vec_b);
+	float32x4_t product = vmulq_f32(vector_a, vector_b_rot);
+	product = vmlsq_f32(product, vector_a_rot, vector_b);
 
 	//Store the results
-	vst1_f32(r, vget_low_f32(prod));
-	vst1_lane_f32(r + 2, vget_high_f32(prod), 0);
+	vst1_f32(r, vget_low_f32(product));
+	vst1_lane_f32(r + 2, vget_high_f32(product), 0);
+
+	//Alternative storage
 }
 
-/*
-// This is all wrong...
-//Maybe come back to this..was
-float MatrixTOarray(Matrix matrix){
-	float converted[3][3];
-	float cols[3];
+//Dot product using NEON C-intrinsics
+void dot_prod(){
 
-	col1 = fVecTOarray(matrix.a);
-	col2 = fVecTOarray(matrix.b);
-	col3 = fVecTOarray(matrix.c);
-	
-	cols[0] = col1;
-	cols[1] = col2;
-	cols[2] = col3;
+	//code goes here
 
-	int i;
-	int j;
-
-	for (i=0; i<= 2; i++){
-		for (j=0; j<= 2; j++){
-			converted[i][j] = cols[j][i]
-			// etc... 
-		}
-	}
-	return converted;
 }
-*/
-/* void arrayTOmatrix(float array){
-
-	void result;
-
-        int ;
-        int ;
-        int ;
-
-        for (i=0; ){
-        	 
-        }
-
-	return result;
-
-} */

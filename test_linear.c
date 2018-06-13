@@ -202,6 +202,30 @@ int main(){
 	lVector back_boy4 = float32x4x4_to_lVector(neon_mat_boy);
 	print_lVector(back_boy4);
 
+//------------------------Struct Cross Prod---------------------
+
+
+
+//-----------------------Neon Cross Prod ------------------------
+	float32x4_t w1 = fVector_wrapper(v1);
+	float32x4_t w2 = fVector_wrapper(v2);
+
+	float32_t* returner1;
+	float* big = (float*)(&returner1);
+	big[0] = vgetq_lane_f32(w1, 0);
+
+	float32_t* returner2;
+	float* boy = (float*)(&returner2);
+	boy[0] = vgetq_lane_f32(w2, 0);
+
+	float32_t* cross_product;
+	cross_prod(cross_product, big, boy); 
+
+	float entry_1 = vgetq_lane_f32(cross_product, 0);
+	// PICK UP HERE TOMORROW....
+	// Maybe scrap these lines and change the cross product code
+	printf("This is a test print of a cross prod value: %f. \n", entry_1);
+
 //----------------------- NEON MATRIX BY VECT (TRANS.) ---------------
 /*
 	Matrix mat_boy =  {.a = v1, .b = v2, .c = v3};

@@ -35,7 +35,6 @@ fVector float32_to_fvector(float32x4_t f32){
     return result;
 }
 
-
 lVector float32x4x4_to_lVector(float32x4x4_t f32x4){
 	lVector result = {};
 	float* retfl = (float*)(&result);
