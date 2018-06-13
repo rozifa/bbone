@@ -21,7 +21,7 @@ float32x4x4_t Matrix_wrapper(Matrix matrix){
 
 	return neon_mat;
 }
-/*
+
 //Inverse wrapper: NEON --> fVector
 fVector float32_to_fvector(float32x4_t f32){
     fVector result = {};
@@ -33,7 +33,7 @@ fVector float32_to_fvector(float32x4_t f32){
     retfl[3] = vgetq_lane_f32(f32, 3);
 
     return result;
-} */
+}
 /*
 //Neon Matrix --> Long Vector (testing)
 lVector float32_to_lVector(float32x4_t f32){
