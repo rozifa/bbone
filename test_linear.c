@@ -203,29 +203,60 @@ int main(){
 	print_lVector(back_boy4);
 
 //------------------------Struct Cross Prod---------------------
+	int dango = 0;
 
+	clock_t t4_5;
+	t4_5 = clock();
+	while (dango <= trials){
 
+		fVector crossy = VCross(v1, v2); 
+
+		dango++;
+	}
+	t4_5 = clock() - t4_5;
+	double time_taken4_5 = (((double)t4_5)/CLOCKS_PER_SEC);
+	printf("STRUCT Cross. took %f seconds.\n", time_taken4_5);
 
 //-----------------------Neon Cross Prod ------------------------
+	int dingo = 0;
+
 	float32x4_t w1 = fVector_wrapper(v1);
 	float32x4_t w2 = fVector_wrapper(v2);
 
-	float32_t* returner1;
+	float32_t* returner1[3];
 	float* big = (float*)(&returner1);
 	big[0] = vgetq_lane_f32(w1, 0);
+	big[1] = vgetq_lane_f32(w1, 1);
+	big[2] = vgetq_lane_f32(w1, 2);
 
-	float32_t* returner2;
+	float32_t* returner2[3];
 	float* boy = (float*)(&returner2);
 	boy[0] = vgetq_lane_f32(w2, 0);
-
+	boy[1] = vgetq_lane_f32(w2, 1);
+	boy[2] = vgetq_lane_f32(w2, 2);
 	float32_t* cross_product;
-	cross_prod(cross_product, big, boy); 
 
-	float entry_1 = vgetq_lane_f32(cross_product, 0);
-	// PICK UP HERE TOMORROW....
-	// Maybe scrap these lines and change the cross product code
-	printf("This is a test print of a cross prod value: %f. \n", entry_1);
+	clock_t t5;
+	t5 = clock();
+	while (dingo <= trials){
+		float32x4_t dinger = cross_prod(cross_product, big, boy); 
+		dingo++;
+	}
 
+	t5 = clock() - t5;
+	double time_taken5 = (((double)t5)/CLOCKS_PER_SEC);
+	printf("NEON Cross. took %f seconds.\n", time_taken5);
+
+	fVector back_w1_check = float32_to_fvector(w1);
+	fVector back_w2_check = float32_to_fvector(w2);
+
+	print_vector(back_w1_check);
+	print_vector(back_w2_check);
+
+	
+	//fVector back_dinger = float32_to_fvector(dinger);
+
+	//print_vector(back_dinger);
 //----------------------- NEON MATRIX BY VECT (TRANS.) ---------------
 /*
 	Matrix mat_boy =  {.a = v1, .b = v2, .c = v3};

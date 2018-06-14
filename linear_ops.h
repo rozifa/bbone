@@ -276,7 +276,7 @@ asm volatile (
 	)
 */
 //Cross Product Using C-Intrinsics - a X b - store in r
-void cross_prod(float32_t *r, float32_t* a, float32_t* b){
+float32x4_t cross_prod(float32_t *r, float32_t* a, float32_t* b){
 	
 	//Load vector elements into NEON registers
 	float32x2_t vector_a_1 = vld1_f32(a + 1);
@@ -294,9 +294,10 @@ void cross_prod(float32_t *r, float32_t* a, float32_t* b){
 	float32x4_t product = vmulq_f32(vector_a, vector_b_rot);
 	product = vmlsq_f32(product, vector_a_rot, vector_b);
 
+	return product;
 	//Store the results
-	vst1_f32(r, vget_low_f32(product));
-	vst1_lane_f32(r + 2, vget_high_f32(product), 0);
+	//vst1_f32(r, vget_low_f32(product));
+	//vst1_lane_f32(r + 2, vget_high_f32(product), 0);
 
 	//Alternative storage
 }
