@@ -227,7 +227,7 @@ float* fVecTOarray(fVector vector){
 	return converted;
 }
 
-//------------ Assembly --------------------------------
+//------------ Mat. Mult. Assembly --------------------------------
 // We can move these NEON operations to a seperate file from the struct operations perhaps
 /*
 asm volatile (
@@ -275,8 +275,37 @@ asm volatile (
 
 	)
 */
+
+//Cross product using inline assembly
+//Maybe someone else can implement this EVEN faster by interleaving the vectors using vst3.... I coudlnt get it to work
+inline __attribute__((always_inline)) float32x4_t neon_assembly_cross(float32x4_t a, float32x4_t b) {
+    register float32x4_t vector_1 asm("q0") = a;
+    register float32x4_t vector_2 asm("q2") = b;
+    register float32x4_t cross_product asm("q8");
+    
+    asm volatile(
+        "vmov    q1, q0              \n\t"
+        "vmov    q3, q2              \n\t"
+        "vzip.32 q0, q1              \n\t" 
+        "vzip.32 q2, q3              \n\t" 
+        "vmul.f32 d16, d1, d6        \n\t" 
+        "vmul.f32 d18, d3, d4        \n\t" 
+        "vmul.f32 d17, d0, d5        \n\t" 
+        "vmls.f32 d16, d3, d5        \n\t" 
+        "vmls.f32 d18, d0, d6        \n\t" 
+        "vmls.f32 d17, d1, d4        \n\t" 
+        "vuzp.32 d16, d18"                 
+        : "=w" (vector_1), "=w" (vector_2), "=w" (cross_product)
+        : "0" (vector_1), "1" (vector_2)
+        : "q1", "q3", "q9"
+    );
+
+    return cross_product;
+}
+
+
 //Cross Product Using C-Intrinsics - a X b - store in r
-float32x4_t cross_prod(float32_t *r, float32_t* a, float32_t* b){
+float32x4_t intrinsic_cross_prod(float32_t *r, float32_t* a, float32_t* b){
 	
 	//Load vector elements into NEON registers
 	float32x2_t vector_a_1 = vld1_f32(a + 1);
@@ -295,7 +324,8 @@ float32x4_t cross_prod(float32_t *r, float32_t* a, float32_t* b){
 	product = vmlsq_f32(product, vector_a_rot, vector_b);
 
 	return product;
-	//Store the results
+
+	//Store the results - if use this method, change type of f(x) to void
 	//vst1_f32(r, vget_low_f32(product));
 	//vst1_lane_f32(r + 2, vget_high_f32(product), 0);
 

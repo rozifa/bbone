@@ -215,7 +215,7 @@ int main(){
 	}
 	t4_5 = clock() - t4_5;
 	double time_taken4_5 = (((double)t4_5)/CLOCKS_PER_SEC);
-	printf("STRUCT Cross. took %f seconds.\n", time_taken4_5);
+	printf("***STRUCT Cross. took %f seconds.\n", time_taken4_5);
 
 //-----------------------Neon Cross Prod ------------------------
 	int dingo = 0;
@@ -239,13 +239,13 @@ int main(){
 	clock_t t5;
 	t5 = clock();
 	while (dingo <= trials){
-		float32x4_t dinger = cross_prod(cross_product, big, boy); 
+		float32x4_t dinger = intrinsic_cross_prod(cross_product, big, boy); 
 		dingo++;
 	}
 
 	t5 = clock() - t5;
 	double time_taken5 = (((double)t5)/CLOCKS_PER_SEC);
-	printf("NEON Cross. took %f seconds.\n", time_taken5);
+	printf("NEON Intr. Cross. took %f seconds.\n", time_taken5);
 
 	fVector back_w1_check = float32_to_fvector(w1);
 	fVector back_w2_check = float32_to_fvector(w2);
@@ -257,6 +257,37 @@ int main(){
 	//fVector back_dinger = float32_to_fvector(dinger);
 
 	//print_vector(back_dinger);
+
+//----------------------- NEON Assembly Cross Prod--------------------
+
+	float const* test_returner1[3];
+	float* test_big = (float*)(&test_returner1);
+	test_big[0] = vgetq_lane_f32(w1, 0);
+	test_big[1] = vgetq_lane_f32(w1, 1);
+	test_big[2] = vgetq_lane_f32(w1, 2);
+
+	float const* test_returner2[3];
+	float* testy_boy = (float*)(&test_returner2);
+	testy_boy[0] = vgetq_lane_f32(w2, 0);
+	testy_boy[1] = vgetq_lane_f32(w2, 1);
+	testy_boy[2] = vgetq_lane_f32(w2, 2);
+	
+	float* test_cross_product;
+
+	int darno = 0;
+
+	clock_t t6;
+	t6 = clock();
+	while (darno <= trials){
+	//neon_assembly_cross(test_big, testy_boy, test_cross_product);
+		float32x4_t assigner_boy = neon_assembly_cross(w1, w2);
+		darno++;
+	}
+	t6 = clock() - t6;
+	double time_taken6 = (((double)t6)/CLOCKS_PER_SEC);
+	printf("***NEON Ass. Cross. took %f seconds.\n", time_taken6);
+
+
 //----------------------- NEON MATRIX BY VECT (TRANS.) ---------------
 /*
 	Matrix mat_boy =  {.a = v1, .b = v2, .c = v3};
