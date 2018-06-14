@@ -229,14 +229,15 @@ float* fVecTOarray(fVector vector){
 
 //------------ Mat. Mult. Assembly --------------------------------
 // We can move these NEON operations to a seperate file from the struct operations perhaps
-/*
-asm volatile (
 
-	// This needs to be converted to C intrinsics or directly implemented via the assembly code
-	// Arm Neon Assembly - Matrix by vector
-	// do this as inline assembly in the C code?
+inline __attribute__((always_inline)) void neon_assembly_natmul() {
+	register type name asm("register") = assignment; //template
+	register type name asm("register") = assignment;
+	register type name asm("register") = assignment;
+
+	asm volatile (
 	// Load both matrices into NEON registers
-	"vld1.32	{d16-d19}, {r1}! \n" // Matrix 1
+	"vld1.32	{d16-d19}, {r1}! \n" // Matrix 1 change from curly to square?
 	"vld1.32	{d20-d23}, [r1]! \n"
 	"vld1.32 	{d0-d3}, [r2]! \n" //Matrix 2
 	"vld1.32 	{d4-d7}, {r2}! \n" 
@@ -244,7 +245,7 @@ asm volatile (
 	//One Column of results
 	"vmul.f32	q12, q8, d0[0] \n"
 	"vmla.f32 	q12, q9, d0[1] \n"
-	"vmla.f32 	q12, q10, d1[0] \n"
+	"vmla.f32 	q12, q10, d1[0] \n" 
 	"vmla.f32 	q12, q11, d1[1] \n"
 
 	//macro
@@ -272,9 +273,9 @@ asm volatile (
 	//store results
 	"vst1.32 	{d24-d27}, {r0}! \n"
 	"vst1.32 	{d28-d31}, {r0}! \n"
+	);
+}
 
-	)
-*/
 
 //Cross product using inline assembly
 //Maybe someone else can implement this EVEN faster by interleaving the vectors using vst3.... I coudlnt get it to work
@@ -282,7 +283,7 @@ inline __attribute__((always_inline)) float32x4_t neon_assembly_cross(float32x4_
     register float32x4_t vector_1 asm("q0") = a;
     register float32x4_t vector_2 asm("q2") = b;
     register float32x4_t cross_product asm("q8");
-    
+    //ok, now...I go nutty
     asm volatile(
         "vmov    q1, q0              \n\t"
         "vmov    q3, q2              \n\t"
