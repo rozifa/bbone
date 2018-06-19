@@ -230,50 +230,59 @@ float* fVecTOarray(fVector vector){
 //------------ Mat. Mult. Assembly --------------------------------
 // We can move these NEON operations to a seperate file from the struct operations perhaps
 
-inline __attribute__((always_inline)) void neon_assembly_natmul() {
-	register type name asm("register") = assignment; //template
-	register type name asm("register") = assignment;
-	register type name asm("register") = assignment;
-
+inline __attribute__((always_inline)) float32x4_t neon_assembly_natmul() {
+	register float32x4x4_t matrix asm("d16") = matrix; //template
+	register float32x4_t vector asm("d0") = vector;
+	register float32x4_t transformed_vector asm("q8");
+// For a transform (matrix by vector)
 	asm volatile (
-	// Load both matrices into NEON registers
-	"vld1.32	{d16-d19}, {r1}! \n" // Matrix 1 change from curly to square?
-	"vld1.32	{d20-d23}, [r1]! \n"
-	"vld1.32 	{d0-d3}, [r2]! \n" //Matrix 2
-	"vld1.32 	{d4-d7}, {r2}! \n" 
+		// Load both matrices into NEON registers
+		"vld1.32	{d16-d19}, {r1}! \n\t" // Matrix 1 change from curly to square?
+		"vld1.32	{d20-d23}, [r1]! \n\t"
+		"vld1.32 	{d0-d3}, [r2]! \n\t" //Vector 
+		"vld1.32 	{d4-d7}, {r2}! \n\t" 
 
-	//One Column of results
-	"vmul.f32	q12, q8, d0[0] \n"
-	"vmla.f32 	q12, q9, d0[1] \n"
-	"vmla.f32 	q12, q10, d1[0] \n" 
-	"vmla.f32 	q12, q11, d1[1] \n"
+		//Multiply matrix by vector entries and accumualte
+		"vmul.f32	q12, q8, d0[0] \n\t"
+		"vmla.f32 	q12, q9, d0[1] \n\t"
+		"vmla.f32 	q12, q10, d1[0] \n\t" 
+		"vmla.f32 	q12, q11, d1[1] \n\t"
 
-	//macro
-	".macro mul_col_f32 res_q, col0_d, col1_d \n"
-	"vmul.f32 \res_q, q8, \col0_d[0] \n"
-	"vmla.f32 \res_q, q9, \col0_d[1] \n"
-	"vmla.f32 \res_q, q10, \col1_d[0] \n"
-	"vmla.f32 \res_q, q11, \col1_d[1] \n"
+		: "=w" (matrix), "=w" (vector), "=w" (transformed_vector)
+		: "0" (matrix), "1" (vector)
+		: "q1", "q3", "q9"
+
+/*
+//------------------ This is additional for fuill multiplcation ------------
+		//macro so we can implement the rest in less lines of code
+		".macro mul_col_f32 res_q, col0_d, col1_d \n\t"
+		"vmul.f32 \res_q, q8, \col0_d[0] \n\t"
+		"vmla.f32 \res_q, q9, \col0_d[1] \n\t"
+		"vmla.f32 \res_q, q10, \col1_d[0] \n\t"
+		"vmla.f32 \res_q, q11, \col1_d[1] \n\t"
 
 
-	//implement matrix by matrix using our macros (less code)
+		//implement matrix by matrix using our macros (less code)
 
-	//load elements
-	"vld1.32	{d16-d19}, {r1}! \n" // Matrix 1
-	"vld1.32	{d20-d23}, [r1]! \n"
-	"vld1.32 	{d0-d3}, [r2]! \n" //Matrix 2
-	"vld1.32 	{d4-d7}, {r2}! \n" 
+		//load elements
+		"vld1.32	{d16-d19}, {r1}! \n\t" // Matrix 1
+		"vld1.32	{d20-d23}, [r1]! \n\t"
+		"vld1.32 	{d0-d	3}, [r2]! \n\t" //Matrix 2
+		"vld1.32 	{d4-d7}, {r2}! \n\t" 
 
-	//multiplication via macro
-	"mul_col_f32 q12, d0, d1 \n"
-	"mul_col_f32 q13, d2, d3 \n"
-	"mul_col_f32 q14, d4, d5 \n"
-	"mul_col_f32 q15, d6, d7 \n"
+		//multiplication via macro
+		"mul_col_f32 q12, d0, d1 \n\t"
+		"mul_col_f32 q13, d2, d3 \n\t"
+		"mul_col_f32 q14, d4, d5 \n\t"
+		"mul_col_f32 q15, d6, d7 \n\t"
 
-	//store results
-	"vst1.32 	{d24-d27}, {r0}! \n"
-	"vst1.32 	{d28-d31}, {r0}! \n"
+		//store results
+		"vst1.32 	{d24-d27}, {r0}! \n\t"
+		"vst1.32 	{d28-d31}, {r0}! \n\t"
+		 */
 	);
+
+	return transformed_vector;
 }
 
 
